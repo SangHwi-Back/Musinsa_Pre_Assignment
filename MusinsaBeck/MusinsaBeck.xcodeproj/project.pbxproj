@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		1B2D6AC4287E571A0061A9FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AC3287E571A0061A9FF /* AppDelegate.swift */; };
 		1B2D6AC6287E571A0061A9FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AC5287E571A0061A9FF /* SceneDelegate.swift */; };
-		1B2D6AC8287E571A0061A9FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AC7287E571A0061A9FF /* ViewController.swift */; };
+		1B2D6AC8287E571A0061A9FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AC7287E571A0061A9FF /* MainViewController.swift */; };
 		1B2D6ACB287E571A0061A9FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D6AC9287E571A0061A9FF /* Main.storyboard */; };
 		1B2D6ACD287E571B0061A9FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D6ACC287E571B0061A9FF /* Assets.xcassets */; };
 		1B2D6AD0287E571B0061A9FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D6ACE287E571B0061A9FF /* LaunchScreen.storyboard */; };
+		1B2D6ADD287E76C00061A9FF /* ContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6ADB287E76C00061A9FF /* ContentsCollectionViewCell.swift */; };
+		1B2D6ADE287E76C00061A9FF /* ContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D6ADC287E76C00061A9FF /* ContentsCollectionViewCell.xib */; };
+		1B2D6AE0287E7CF70061A9FF /* ContentsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6ADF287E7CF70061A9FF /* ContentsCollectionView.swift */; };
+		1B2D6AE2287E8C4A0061A9FF /* CommonRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AE1287E8C4A0061A9FF /* CommonRoundedButton.swift */; };
+		1B2D6AE4287E90A10061A9FF /* CommonPageableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AE3287E90A10061A9FF /* CommonPageableScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B2D6AC0287E571A0061A9FF /* MusinsaBeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusinsaBeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B2D6AC3287E571A0061A9FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B2D6AC5287E571A0061A9FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1B2D6AC7287E571A0061A9FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B2D6AC7287E571A0061A9FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1B2D6ACA287E571A0061A9FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B2D6ACC287E571B0061A9FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B2D6ACF287E571B0061A9FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B2D6AD1287E571B0061A9FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B2D6ADB287E76C00061A9FF /* ContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewCell.swift; sourceTree = "<group>"; };
+		1B2D6ADC287E76C00061A9FF /* ContentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentsCollectionViewCell.xib; sourceTree = "<group>"; };
+		1B2D6ADF287E7CF70061A9FF /* ContentsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionView.swift; sourceTree = "<group>"; };
+		1B2D6AE1287E8C4A0061A9FF /* CommonRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRoundedButton.swift; sourceTree = "<group>"; };
+		1B2D6AE3287E90A10061A9FF /* CommonPageableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPageableScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,52 @@
 		1B2D6AC2287E571A0061A9FF /* MusinsaBeck */ = {
 			isa = PBXGroup;
 			children = (
-				1B2D6AC3287E571A0061A9FF /* AppDelegate.swift */,
-				1B2D6AC5287E571A0061A9FF /* SceneDelegate.swift */,
-				1B2D6AC7287E571A0061A9FF /* ViewController.swift */,
-				1B2D6AC9287E571A0061A9FF /* Main.storyboard */,
-				1B2D6ACC287E571B0061A9FF /* Assets.xcassets */,
-				1B2D6ACE287E571B0061A9FF /* LaunchScreen.storyboard */,
-				1B2D6AD1287E571B0061A9FF /* Info.plist */,
+				1B2D6AE7287E95830061A9FF /* Resources */,
+				1B2D6AE9287E95C70061A9FF /* Controller */,
+				1B2D6AE8287E95C10061A9FF /* View */,
 			);
 			path = MusinsaBeck;
+			sourceTree = "<group>";
+		};
+		1B2D6AE7287E95830061A9FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D6AC3287E571A0061A9FF /* AppDelegate.swift */,
+				1B2D6AC5287E571A0061A9FF /* SceneDelegate.swift */,
+				1B2D6ACC287E571B0061A9FF /* Assets.xcassets */,
+				1B2D6AD1287E571B0061A9FF /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1B2D6AE8287E95C10061A9FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D6AEA287E971E0061A9FF /* Commons */,
+				1B2D6AC9287E571A0061A9FF /* Main.storyboard */,
+				1B2D6ADC287E76C00061A9FF /* ContentsCollectionViewCell.xib */,
+				1B2D6ACE287E571B0061A9FF /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B2D6AE9287E95C70061A9FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D6AC7287E571A0061A9FF /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1B2D6AEA287E971E0061A9FF /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D6AE3287E90A10061A9FF /* CommonPageableScrollView.swift */,
+				1B2D6AE1287E8C4A0061A9FF /* CommonRoundedButton.swift */,
+				1B2D6ADB287E76C00061A9FF /* ContentsCollectionViewCell.swift */,
+				1B2D6ADF287E7CF70061A9FF /* ContentsCollectionView.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B2D6ADE287E76C00061A9FF /* ContentsCollectionViewCell.xib in Resources */,
 				1B2D6AD0287E571B0061A9FF /* LaunchScreen.storyboard in Resources */,
 				1B2D6ACD287E571B0061A9FF /* Assets.xcassets in Resources */,
 				1B2D6ACB287E571A0061A9FF /* Main.storyboard in Resources */,
@@ -138,9 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B2D6AC8287E571A0061A9FF /* ViewController.swift in Sources */,
+				1B2D6AE2287E8C4A0061A9FF /* CommonRoundedButton.swift in Sources */,
+				1B2D6ADD287E76C00061A9FF /* ContentsCollectionViewCell.swift in Sources */,
+				1B2D6AC8287E571A0061A9FF /* MainViewController.swift in Sources */,
 				1B2D6AC4287E571A0061A9FF /* AppDelegate.swift in Sources */,
+				1B2D6AE4287E90A10061A9FF /* CommonPageableScrollView.swift in Sources */,
 				1B2D6AC6287E571A0061A9FF /* SceneDelegate.swift in Sources */,
+				1B2D6AE0287E7CF70061A9FF /* ContentsCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusinsaBeck/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,6 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusinsaBeck/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
