@@ -25,6 +25,8 @@
 		1B2D6AF4287E9C310061A9FF /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AF3287E9C310061A9FF /* Goods.swift */; };
 		1B2D6AF6287E9C350061A9FF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AF5287E9C350061A9FF /* Styles.swift */; };
 		1B2D6AF8287E9C620061A9FF /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AF7287E9C620061A9FF /* ResponseData.swift */; };
+		1B2D6AFB287EAF1A0061A9FF /* UseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */; };
+		1B2D6AFE287EAFBD0061A9FF /* UseCaseResponsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		1B2D6AF3287E9C310061A9FF /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		1B2D6AF5287E9C350061A9FF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		1B2D6AF7287E9C620061A9FF /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseContainer.swift; sourceTree = "<group>"; };
+		1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseResponsible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				1B2D6AE7287E95830061A9FF /* Resources */,
 				1B2D6AE9287E95C70061A9FF /* Controller */,
 				1B2D6AE8287E95C10061A9FF /* View */,
+				1B2D6AFC287EAF1E0061A9FF /* UseCase */,
 				1B2D6AF9287E9C6E0061A9FF /* Entity */,
 			);
 			path = MusinsaBeck;
@@ -141,6 +146,15 @@
 				1B2D6AF1287E9BFE0061A9FF /* Footer.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		1B2D6AFC287EAF1E0061A9FF /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */,
+				1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B2D6AF0287E9BF60061A9FF /* Header.swift in Sources */,
+				1B2D6AFB287EAF1A0061A9FF /* UseCaseContainer.swift in Sources */,
+				1B2D6AFE287EAFBD0061A9FF /* UseCaseResponsible.swift in Sources */,
 				1B2D6AE2287E8C4A0061A9FF /* CommonRoundedButton.swift in Sources */,
 				1B2D6AF6287E9C350061A9FF /* Styles.swift in Sources */,
 				1B2D6ADD287E76C00061A9FF /* ContentsCollectionViewCell.swift in Sources */,
@@ -377,7 +393,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L3ZPWB4HNK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MusinsaBeck/Info.plist;
+				INFOPLIST_FILE = MusinsaBeck/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -405,7 +421,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L3ZPWB4HNK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MusinsaBeck/Info.plist;
+				INFOPLIST_FILE = MusinsaBeck/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
