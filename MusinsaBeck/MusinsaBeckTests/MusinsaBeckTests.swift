@@ -30,4 +30,21 @@ class MusinsaBeckTests: XCTestCase {
             disposables2.removeAll()
         }
     }
+    
+    func testRequestUseCase() throws {
+        let expectation = XCTestExpectation()
+        
+        RequestInterviewUseCase(container: UseCaseContainer.shared)
+            .request { result in
+                switch result {
+                case .success(let list):
+                    expectation.fulfill()
+                    print(list)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        
+        wait(for: [expectation], timeout: 3.0)
+    }
 }

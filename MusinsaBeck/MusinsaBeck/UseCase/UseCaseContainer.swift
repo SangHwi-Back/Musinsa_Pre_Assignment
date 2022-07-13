@@ -8,5 +8,6 @@
 import Foundation
 
 class UseCaseContainer {
-    
+    static let shared = UseCaseContainer()
+    let disposeBag = DisposeBag()
 }

@@ -7,6 +7,10 @@
 
 import Foundation
 
-protocol UseCaseResponsible {
+class UseCaseResponsible: Disposable {
+    var container: UseCaseContainer
     
+    init(container: UseCaseContainer) {
+        self.container = container
+    }
 }
