@@ -16,7 +16,7 @@ class RequestInterviewUseCase: UseCaseResponsible {
     let urlRequestModel = RequestURLModel()
     let responseDecodeModel = ResponseDecodeModel<InterviewList>()
     
-    func request(_ completionHandler: @escaping (Result<[InterviewList], Error>)->Void) {
+    func request(_ completionHandler: @escaping (Result<InterviewList, Error>)->Void) {
         
         urlRequestModel.getRequest { requestResult, disposable in
             guard let requestResult = requestResult as? Data else {

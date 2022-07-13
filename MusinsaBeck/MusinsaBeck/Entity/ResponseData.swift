@@ -10,5 +10,5 @@ import Foundation
 struct ResponseData: Codable {
     let header: Header?
     let contents: Contents
-    let footer: Footer
+    let footer: Footer?
 }

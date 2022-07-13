@@ -11,7 +11,7 @@ struct Goods: Codable {
     let linkURL: String
     let thumbnailURL: String
     let brandName: String
-    let price: String
+    let price: Int
     let saleRate: Int
     let hasCoupon: Bool
 }
