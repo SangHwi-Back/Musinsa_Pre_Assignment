@@ -8,8 +8,8 @@
 import Foundation
 
 class InterViewListModel {
-    private var data: Data
-    private var list: InterviewList
+    private(set) var data: Data
+    private(set) var list: InterviewList
     
     init(list: InterviewList, from data: Data) {
         self.list = list

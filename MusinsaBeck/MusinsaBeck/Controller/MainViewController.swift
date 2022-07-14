@@ -16,8 +16,8 @@ class MainViewController: UIViewController {
         
         requestUseCase?.request({ result in
             switch result {
-            case .success(let list):
-                print(list)
+            case .success(let model):
+                print(model.list)
             case .failure(let error):
                 print(error)
             }
