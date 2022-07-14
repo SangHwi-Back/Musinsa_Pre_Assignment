@@ -13,9 +13,9 @@ class RequestInterviewUseCase: UseCaseResponsible {
         super.init(container: container)
     }
     
-    private(set) var listModel: InterViewListModel?
+    private(set) var listModel: InterviewListModel?
     
-    func request(_ completionHandler: @escaping (Result<InterViewListModel, Error>)->Void) {
+    func request(_ completionHandler: @escaping (Result<InterviewListModel, Error>)->Void) {
         
         RequestURLModel().getRequest { requestResult, disposable in
             guard let requestResult = requestResult as? Data else {
@@ -28,7 +28,7 @@ class RequestInterviewUseCase: UseCaseResponsible {
                 return
             }
             
-            let model = InterViewListModel(list: result, from: requestResult)
+            let model = InterviewListModel(list: result, from: requestResult)
             self.listModel = model
             
             completionHandler(.success(model))

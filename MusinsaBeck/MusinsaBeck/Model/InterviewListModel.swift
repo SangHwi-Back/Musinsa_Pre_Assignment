@@ -1,5 +1,5 @@
 //
-//  InterViewListModel.swift
+//  InterviewListModel.swift
 //  MusinsaBeck
 //
 //  Created by 백상휘 on 2022/07/14.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class InterViewListModel {
+class InterviewListModel {
     private(set) var data: Data
     private(set) var list: InterviewList
     
