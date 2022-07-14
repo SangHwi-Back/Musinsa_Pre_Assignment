@@ -13,10 +13,7 @@ class RequestInterviewUseCase: UseCaseResponsible {
         super.init(container: container)
     }
     
-    let urlRequestModel = RequestURLModel()
-    let responseDecodeModel = ResponseDecodeModel<InterviewList>()
-    
-    private var listModel: InterViewListModel?
+    private(set) var listModel: InterViewListModel?
     
     func request(_ completionHandler: @escaping (Result<InterViewListModel, Error>)->Void) {
         
@@ -26,7 +23,7 @@ class RequestInterviewUseCase: UseCaseResponsible {
                 return
             }
             
-            guard let result = self.responseDecodeModel.decode(requestResult) else {
+            guard let result = ResponseDecodeModel<InterviewList>().decode(requestResult) else {
                 completionHandler(.failure(RequestError.decodeFailed))
                 return
             }
@@ -38,6 +35,10 @@ class RequestInterviewUseCase: UseCaseResponsible {
             
             self.container.disposeBag.insert(disposable)
         }
+    }
+    
+    deinit {
+        container.disposeBag.dispose()
     }
 }
 

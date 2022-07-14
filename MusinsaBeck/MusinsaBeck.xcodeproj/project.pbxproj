@@ -189,11 +189,10 @@
 		1B2D6AFC287EAF1E0061A9FF /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				1BE8B979287EC60900C3DDE8 /* DisposeBag.swift */,
-				1BE8B991287EE64200C3DDE8 /* Disposable.swift */,
+				1BE8B995287FC74200C3DDE8 /* Dispose */,
 				1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */,
-				1BE8B988287ED5DE00C3DDE8 /* RequestInterviewUseCase.swift */,
 				1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */,
+				1BE8B988287ED5DE00C3DDE8 /* RequestInterviewUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -214,6 +213,15 @@
 				1BE8B993287FAD3A00C3DDE8 /* InterViewListModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1BE8B995287FC74200C3DDE8 /* Dispose */ = {
+			isa = PBXGroup;
+			children = (
+				1BE8B979287EC60900C3DDE8 /* DisposeBag.swift */,
+				1BE8B991287EE64200C3DDE8 /* Disposable.swift */,
+			);
+			path = Dispose;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

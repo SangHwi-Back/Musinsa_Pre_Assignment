@@ -8,12 +8,13 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    let requestUseCase = UseCaseContainer.shared.getUseCase(RequestInterviewUseCase.self) as? RequestInterviewUseCase
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let usecase = UseCaseContainer.shared.getUseCase(RequestInterviewUseCase.self) as? RequestInterviewUseCase
-        
-        usecase?.request({ result in
+        requestUseCase?.request({ result in
             switch result {
             case .success(let list):
                 print(list)

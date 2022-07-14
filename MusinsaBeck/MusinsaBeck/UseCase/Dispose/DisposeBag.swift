@@ -11,7 +11,7 @@ final class DisposeBag {
     private var lock = NSRecursiveLock()
     
     var disposables = [Disposable]()
-    var isDisposed = false
+    private var isDisposed = false
     
     func insert(_ disposable: Disposable) {
         _insert(disposable)?.dispose()

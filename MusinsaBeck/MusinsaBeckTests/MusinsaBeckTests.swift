@@ -33,10 +33,10 @@ class MusinsaBeckTests: XCTestCase {
     
     func testRequestUseCase() throws {
         let expectation = XCTestExpectation()
-        let usecase = UseCaseContainer.shared.getUseCase(RequestInterviewUseCase.self) as? RequestInterviewUseCase
         
         measure(metrics: [XCTMemoryMetric()]) {
-            usecase?.request({ result in
+            let usecase1 = UseCaseContainer.shared.getUseCase(RequestInterviewUseCase.self) as? RequestInterviewUseCase
+            usecase1?.request({ result in
                 switch result {
                 case .success(_):
                     expectation.fulfill()
@@ -44,6 +44,17 @@ class MusinsaBeckTests: XCTestCase {
                     print(error)
                 }
             })
+            
+            let usecase2 = UseCaseContainer.shared.getUseCase(RequestInterviewUseCase.self) as? RequestInterviewUseCase
+            usecase2?.request({ result in
+                switch result {
+                case .success(_):
+                    expectation.fulfill()
+                case .failure(let error):
+                    print(error)
+                }
+            })
+            
         }
         
         wait(for: [expectation], timeout: 3.0)
