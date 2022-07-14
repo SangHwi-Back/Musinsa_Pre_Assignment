@@ -10,5 +10,16 @@ import UIKit
 class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let usecase = UseCaseContainer.shared.getUseCase(RequestInterviewUseCase.self) as? RequestInterviewUseCase
+        
+        usecase?.request({ result in
+            switch result {
+            case .success(let list):
+                print(list)
+            case .failure(let error):
+                print(error)
+            }
+        })
     }
 }

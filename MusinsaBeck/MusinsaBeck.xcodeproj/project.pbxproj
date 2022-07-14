@@ -34,6 +34,7 @@
 		1BE8B98E287EDAED00C3DDE8 /* ResponseDecodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B98D287EDAED00C3DDE8 /* ResponseDecodeModel.swift */; };
 		1BE8B990287EDBE900C3DDE8 /* InterviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B98F287EDBE900C3DDE8 /* InterviewList.swift */; };
 		1BE8B992287EE64200C3DDE8 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B991287EE64200C3DDE8 /* Disposable.swift */; };
+		1BE8B994287FAD3A00C3DDE8 /* InterViewListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B993287FAD3A00C3DDE8 /* InterViewListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		1BE8B98D287EDAED00C3DDE8 /* ResponseDecodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecodeModel.swift; sourceTree = "<group>"; };
 		1BE8B98F287EDBE900C3DDE8 /* InterviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewList.swift; sourceTree = "<group>"; };
 		1BE8B991287EE64200C3DDE8 /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		1BE8B993287FAD3A00C3DDE8 /* InterViewListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterViewListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			children = (
 				1BE8B98A287ED8D100C3DDE8 /* RequestURLModel.swift */,
 				1BE8B98D287EDAED00C3DDE8 /* ResponseDecodeModel.swift */,
+				1BE8B993287FAD3A00C3DDE8 /* InterViewListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				1B2D6AF2287E9BFE0061A9FF /* Footer.swift in Sources */,
 				1B2D6AF4287E9C310061A9FF /* Goods.swift in Sources */,
 				1BE8B990287EDBE900C3DDE8 /* InterviewList.swift in Sources */,
+				1BE8B994287FAD3A00C3DDE8 /* InterViewListModel.swift in Sources */,
 				1BE8B98E287EDAED00C3DDE8 /* ResponseDecodeModel.swift in Sources */,
 				1BE8B98B287ED8D100C3DDE8 /* RequestURLModel.swift in Sources */,
 				1BE8B992287EE64200C3DDE8 /* Disposable.swift in Sources */,

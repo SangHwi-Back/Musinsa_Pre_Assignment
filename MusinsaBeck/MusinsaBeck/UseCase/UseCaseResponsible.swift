@@ -8,9 +8,9 @@
 import Foundation
 
 class UseCaseResponsible: Disposable {
-    var container: UseCaseContainer
+    private(set) var container: UseCaseContainer
     
-    init(container: UseCaseContainer) {
+    required init(container: UseCaseContainer) { // Compiler에게 container가 반드시 정의되어야 한다고 알려주기 위해 사용합니다.
         self.container = container
     }
 }

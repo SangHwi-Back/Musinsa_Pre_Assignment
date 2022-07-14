@@ -9,16 +9,18 @@ import Foundation
 
 class RequestInterviewUseCase: UseCaseResponsible {
     
-    override init(container: UseCaseContainer) {
+    required init(container: UseCaseContainer) {
         super.init(container: container)
     }
     
     let urlRequestModel = RequestURLModel()
     let responseDecodeModel = ResponseDecodeModel<InterviewList>()
     
-    func request(_ completionHandler: @escaping (Result<InterviewList, Error>)->Void) {
+    private var listModel: InterViewListModel?
+    
+    func request(_ completionHandler: @escaping (Result<InterViewListModel, Error>)->Void) {
         
-        urlRequestModel.getRequest { requestResult, disposable in
+        RequestURLModel().getRequest { requestResult, disposable in
             guard let requestResult = requestResult as? Data else {
                 completionHandler(.failure(RequestError.networkRequest))
                 return
@@ -29,7 +31,10 @@ class RequestInterviewUseCase: UseCaseResponsible {
                 return
             }
             
-            completionHandler(.success(result))
+            let model = InterViewListModel(list: result, from: requestResult)
+            self.listModel = model
+            
+            completionHandler(.success(model))
             
             self.container.disposeBag.insert(disposable)
         }
