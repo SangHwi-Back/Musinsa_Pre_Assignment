@@ -26,13 +26,7 @@ class BannerCollectionViewCell: UICollectionViewCell, MainCollectionViewCell {
             $0.removeFromSuperview()
         }
         
-        var count = 5
         for entity in data {
-            
-            count -= 1
-            guard count != 0 else {
-                break
-            }
             
             guard let entity = entity as? Banners else {
                 continue
@@ -46,7 +40,7 @@ class BannerCollectionViewCell: UICollectionViewCell, MainCollectionViewCell {
             imageView.openURL = URL(string: entity.linkURL)
             
             if let url = URL(string: entity.thumbnailURL) {
-                URLSession.shared.dataTask(with: url) { data, _, _ in // Asynchronous
+                URLSession.shared.dataTask(with: url) { data, _, _ in
                     if let data = data {
                         DispatchQueue.main.async {
                             imageView.image = UIImage(data: data)
