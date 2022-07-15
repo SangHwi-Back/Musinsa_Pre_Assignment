@@ -21,31 +21,27 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     private let requestUseCase = UseCaseContainer.shared.getUseCase(RequestInterviewUseCase.self) as? RequestInterviewUseCase
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return listModel?.list.data.count ?? 0
+        return listModel?.entityCount() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        guard let data = listModel?.list.data[section].contents else {
+        guard let data = listModel?.contents(section), let cellType = getCellType(section) else {
             return 0
         }
         
-        var array: [Any]?
-        let cellType = data.type.cellType()
-        
-        if cellType == .grid {
-            array = data.goods
-        } else if cellType == .banner || cellType == .scroll {
-            array = [""]
-        } else if cellType == .style {
-            array = data.styles
+        switch cellType {
+        case .banner, .scroll:
+            return 1
+        case .grid:
+            return data.goods?.count ?? 0
+        case .style:
+            return data.styles?.count ?? 0
         }
-        
-        return array?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let model = listModel?.list.data[indexPath.section].contents, let cellType = indexPath.cellType() else {
+        guard let model = listModel?.contents(indexPath.section), let cellType = indexPath.cellType() else {
             os_log("MainCollectionView reuse cell Failed.")
             return UICollectionViewCell()
         }
@@ -77,21 +73,23 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
             
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier, for: indexPath) as! HeaderCollectionReusableView
-            header.isHidden = listModel?.list.data[indexPath.section].header == nil
+            header.isHidden = isHeaderHidden(indexPath.section)
             
             return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier, for: indexPath) as! HeaderCollectionReusableView
         case UICollectionView.elementKindSectionFooter:
             
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.reuseIdentifier, for: indexPath) as! FooterCollectionReusableView
-            footer.isHidden = listModel?.list.data[indexPath.section].footer == nil
+            footer.isHidden = isFooterHidden(indexPath.section)
             
             return footer
         default:
+            os_log("MainCollectionView 'viewForSupplementaryElementOfKind' isn't contained in UICollectionView.elementKindSectionHeader or UICollectionView.elementKindSectionFooter")
             return UICollectionReusableView()
         }
     }
 }
 
+// MARK: - Interfaces need to communicate with ViewController.
 extension MainCollectionViewDataSource {
     func request(_ completionHandler: @escaping () -> Void) {
         requestUseCase?.request({ result in
@@ -107,30 +105,23 @@ extension MainCollectionViewDataSource {
     }
     
     func getCellType(_ indexPath: IndexPath) -> MainCellType? {
-        guard let data = listModel?.list.data[indexPath.section].contents else {
-            return nil
-        }
-        
-        return data.type.cellType()
+        listModel?.cellType(indexPath.section)
     }
     
     func getCellType(_ section: Int) -> MainCellType? {
-        guard let data = listModel?.list.data[section].contents else {
-            return nil
-        }
-        
-        return data.type.cellType()
+        listModel?.cellType(section)
     }
     
     func isHeaderHidden(_ section: Int) -> Bool {
-        return listModel?.list.data[section].header == nil
+        listModel?.header(section) == nil
     }
     
     func isFooterHidden(_ section: Int) -> Bool {
-        return listModel?.list.data[section].footer == nil
+        listModel?.footer(section) == nil
     }
 }
 
+// MARK: - Type extensions for MainCellType.
 extension String {
     func cellType() -> MainCellType? {
         MainCellType.allCases.first(where: { $0.rawValue == self })

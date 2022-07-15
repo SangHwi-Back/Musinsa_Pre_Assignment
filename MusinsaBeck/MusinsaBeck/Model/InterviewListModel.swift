@@ -42,6 +42,11 @@ class InterviewListModel {
         list.data.count
     }
     
+    func cellType(_ section: Int) -> MainCellType? {
+        contents(section)?.type.cellType()
+    }
+    
+    // MARK: - Need to check index.
     func contents(_ index: Int) -> Contents? {
         guard check(index) else {
             return nil
@@ -66,6 +71,7 @@ class InterviewListModel {
         return list.data[index].footer
     }
     
+    // MARK: - Check index
     private func check(_ index: Int) -> Bool {
         return index >= 0 && list.data.count > index
     }

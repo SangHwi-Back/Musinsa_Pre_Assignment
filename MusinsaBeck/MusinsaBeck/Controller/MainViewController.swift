@@ -36,24 +36,25 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         }
         
         let layout = collectionViewLayout as? UICollectionViewFlowLayout
-        var width: CGFloat, height: CGFloat = 0
-        
-        let interimSpacing = layout?.minimumInteritemSpacing ?? itemSpacing
         let lineWidth = collectionView.frame.width
-        let lineSpacing = (2 * (layout?.minimumLineSpacing ?? lineSpacing))
+        let interimSpacingTwice = 2 * (layout?.minimumInteritemSpacing ?? itemSpacing)
+        let lineSpacingTwice = 2 * (layout?.minimumLineSpacing ?? lineSpacing)
+        
+        var width: CGFloat, height: CGFloat = 0
         
         switch type {
         case .banner:
             width = lineWidth
             height = lineWidth
         case .scroll:
-            width = lineWidth; height = lineWidth / 3
+            width = lineWidth
+            height = lineWidth / 3
         case .grid:
-            width = ((lineWidth - lineSpacing) / 3) - (interimSpacing)
-            height = ((lineWidth - lineSpacing) / 3)
+            width = ((lineWidth - lineSpacingTwice) / 3) - interimSpacingTwice
+            height = ((lineWidth - lineSpacingTwice) / 3) * 1.6
         case .style:
-            width = ((lineWidth - lineSpacing) / 2) - (interimSpacing * 2)
-            height = width * 1.5
+            width = ((lineWidth - lineSpacingTwice) / 2) - interimSpacingTwice
+            height = width * 1.6
         }
         
         return CGSize(width: width, height: height)
@@ -65,13 +66,11 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
             return lineSpacing
         }
         
-        let lineSpacing = 2 * (layout.minimumLineSpacing)
-        
         switch cellType {
         case .banner, .scroll:
             return 0
         case .grid, .style:
-            return lineSpacing
+            return layout.minimumLineSpacing
         }
     }
     
