@@ -20,22 +20,22 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="962-jC-0nH">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cv3-yg-DGO">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="15" minimumInteritemSpacing="3" id="Cv3-yg-DGO">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="50" height="50"/>
-                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                    <inset key="sectionInset" minX="15" minY="10" maxX="15" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCollectionViewCell" id="C8n-uM-lE6" customClass="BannerCollectionViewCell" customModule="MusinsaBeck" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="414" height="414"/>
+                                        <rect key="frame" x="15" y="60" width="384" height="414"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="K2I-Cw-4Xo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="414"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwQ-ab-2Ua">
-                                                    <rect key="frame" x="332" y="353.5" width="66" height="28.5"/>
+                                                    <rect key="frame" x="302" y="353.5" width="66" height="28.5"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
@@ -51,17 +51,17 @@
                                                 <constraint firstAttribute="bottom" secondItem="ZwQ-ab-2Ua" secondAttribute="bottom" constant="32" id="OOL-qL-d6o"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="414" height="414"/>
+                                        <size key="customSize" width="384" height="414"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ScrollCollectionViewCell" id="To4-Ny-VI1" customClass="ScrollCollectionViewCell" customModule="MusinsaBeck" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="484" width="414" height="128"/>
+                                        <rect key="frame" x="15" y="489" width="384" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lwb-zf-ISN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJK-SL-V1G">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="128"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1x-LU-0ut">
                                                             <rect key="frame" x="0.0" y="0.0" width="16" height="128"/>
@@ -89,10 +89,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="hJK-SL-V1G" secondAttribute="bottom" id="mxC-AW-UUE"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="414" height="128"/>
+                                        <size key="customSize" width="384" height="128"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridItemCollectionViewCell" id="P3K-mu-wz1" customClass="GridItemCollectionViewCell" customModule="MusinsaBeck" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="622" width="128" height="128"/>
+                                        <rect key="frame" x="15" y="632" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iNL-7y-ihB">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -101,7 +101,7 @@
                                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StyleGridItemCollectionViewCell" id="PgI-xI-Fsl" customClass="StyleGridItemCollectionViewCell" customModule="MusinsaBeck" customModuleProvider="target">
-                                        <rect key="frame" x="138" y="622" width="128" height="128"/>
+                                        <rect key="frame" x="146" y="632" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="802-Sf-LDE">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -155,7 +155,7 @@
                                     </constraints>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FooterCollectionReusableView" id="GfG-p8-b3T" customClass="FooterCollectionReusableView" customModule="MusinsaBeck" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="760" width="414" height="50"/>
+                                    <rect key="frame" x="0.0" y="770" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVV-6f-hFw">

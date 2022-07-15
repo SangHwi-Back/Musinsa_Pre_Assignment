@@ -9,5 +9,6 @@ import Foundation
 
 protocol MainCollectionViewCell {
     var data: Any? { get set }
+    /// Set UI elements from Nib Using local attribute 'data'.
     func setData(_ cellType: MainCellType)
 }

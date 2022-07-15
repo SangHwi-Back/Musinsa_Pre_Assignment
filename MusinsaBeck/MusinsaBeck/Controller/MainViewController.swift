@@ -31,34 +31,77 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var width: CGFloat = 0
-        var height: CGFloat = 0
+        guard let type = dataSource.getCellType(indexPath) else {
+            return CGSize.zero
+        }
         
-        switch dataSource.getCellType(indexPath) {
-        case .scroll:
-            width = collectionView.frame.width
-            height = collectionView.frame.width / 3
-        case .grid:
-            width = (collectionView.frame.width / 3) - (itemSpacing * 3)
-            height = (collectionView.frame.width / 3)
-        case .style:
-            width = (collectionView.frame.width / 2) - (itemSpacing * 2)
-            height = (collectionView.frame.width / 2)
+        let layout = collectionViewLayout as? UICollectionViewFlowLayout
+        var width: CGFloat, height: CGFloat = 0
+        
+        let interimSpacing = layout?.minimumInteritemSpacing ?? itemSpacing
+        let lineWidth = collectionView.frame.width
+        let lineSpacing = (2 * (layout?.minimumLineSpacing ?? lineSpacing))
+        
+        switch type {
         case .banner:
-            width = collectionView.frame.width
-            height = collectionView.frame.width
-        case .none:
-            width = 0
-            height = 0
+            width = lineWidth
+            height = lineWidth
+        case .scroll:
+            width = lineWidth; height = lineWidth / 3
+        case .grid:
+            width = ((lineWidth - lineSpacing) / 3) - (interimSpacing)
+            height = ((lineWidth - lineSpacing) / 3)
+        case .style:
+            width = ((lineWidth - lineSpacing) / 2) - (interimSpacing * 2)
+            height = width * 1.5
         }
         
         return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        lineSpacing
+        
+        guard let cellType = dataSource.getCellType(section), let layout = collectionViewLayout as? UICollectionViewFlowLayout else {
+            return lineSpacing
+        }
+        
+        let lineSpacing = 2 * (layout.minimumLineSpacing)
+        
+        switch cellType {
+        case .banner, .scroll:
+            return 0
+        case .grid, .style:
+            return lineSpacing
+        }
     }
-}
-
-extension MainViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        let sectionInset = (collectionViewLayout as? UICollectionViewFlowLayout)?.sectionInset
+        let verticalSpacing = sectionInset?.top ?? lineSpacing
+        var horizontalSpacing = sectionInset?.left ?? lineSpacing
+        
+        if let type = dataSource.getCellType(section), [.scroll, .banner].contains(type) {
+            horizontalSpacing = 0
+        }
+        
+        return UIEdgeInsets(
+            top: verticalSpacing,
+            left: horizontalSpacing,
+            bottom: verticalSpacing,
+            right: horizontalSpacing
+        )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        let height: CGFloat = dataSource.isHeaderHidden(section) ? 0 : 50
+        return CGSize(width: collectionView.frame.width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        
+        let height: CGFloat = dataSource.isFooterHidden(section) ? 0 : 50
+        return CGSize(width: collectionView.frame.width, height: height)
+    }
 }

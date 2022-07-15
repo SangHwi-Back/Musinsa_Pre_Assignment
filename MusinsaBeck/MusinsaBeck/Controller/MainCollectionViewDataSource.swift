@@ -18,29 +18,7 @@ enum MainCellType: String, CaseIterable {
 class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     private var listModel: InterviewListModel?
-    
     private let requestUseCase = UseCaseContainer.shared.getUseCase(RequestInterviewUseCase.self) as? RequestInterviewUseCase
-    
-    func request(_ completionHandler: @escaping () -> Void) {
-        requestUseCase?.request({ result in
-            switch result {
-            case .success(let model):
-                self.listModel = model
-                completionHandler()
-            case .failure(_):
-                os_log("Request interviewListFailed")
-                completionHandler()
-            }
-        })
-    }
-    
-    func getCellType(_ indexPath: IndexPath) -> MainCellType? {
-        guard let data = listModel?.list.data[indexPath.section].contents else {
-            return nil
-        }
-        
-        return data.type.cellType()
-    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return listModel?.list.data.count ?? 0
@@ -97,16 +75,59 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
+            
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier, for: indexPath) as! HeaderCollectionReusableView
             header.isHidden = listModel?.list.data[indexPath.section].header == nil
+            
             return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier, for: indexPath) as! HeaderCollectionReusableView
         case UICollectionView.elementKindSectionFooter:
+            
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.reuseIdentifier, for: indexPath) as! FooterCollectionReusableView
             footer.isHidden = listModel?.list.data[indexPath.section].footer == nil
+            
             return footer
         default:
             return UICollectionReusableView()
         }
+    }
+}
+
+extension MainCollectionViewDataSource {
+    func request(_ completionHandler: @escaping () -> Void) {
+        requestUseCase?.request({ result in
+            switch result {
+            case .success(let model):
+                self.listModel = model
+            case .failure(_):
+                os_log("Request interviewListFailed")
+            }
+            
+            completionHandler()
+        })
+    }
+    
+    func getCellType(_ indexPath: IndexPath) -> MainCellType? {
+        guard let data = listModel?.list.data[indexPath.section].contents else {
+            return nil
+        }
+        
+        return data.type.cellType()
+    }
+    
+    func getCellType(_ section: Int) -> MainCellType? {
+        guard let data = listModel?.list.data[section].contents else {
+            return nil
+        }
+        
+        return data.type.cellType()
+    }
+    
+    func isHeaderHidden(_ section: Int) -> Bool {
+        return listModel?.list.data[section].header == nil
+    }
+    
+    func isFooterHidden(_ section: Int) -> Bool {
+        return listModel?.list.data[section].footer == nil
     }
 }
 
