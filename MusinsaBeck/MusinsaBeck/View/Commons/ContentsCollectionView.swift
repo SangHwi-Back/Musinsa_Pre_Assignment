@@ -9,4 +9,8 @@ import UIKit
 
 class ContentsCollectionView: UIView {
 
+    @IBOutlet weak var linkedImageView: LinkedUIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var couponLabel: UILabel!
 }

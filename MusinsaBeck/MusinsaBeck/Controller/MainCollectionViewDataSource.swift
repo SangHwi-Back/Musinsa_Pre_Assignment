@@ -34,7 +34,15 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         case .banner, .scroll:
             return 1
         case .grid:
-            return data.goods?.count ?? 0
+            if let count = data.goods?.count {
+                if count >= 3 {
+                    return 3
+                } else {
+                    return count
+                }
+            } else {
+                return 0
+            }
         case .style:
             return data.styles?.count ?? 0
         }
@@ -51,7 +59,7 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         switch cellType {
         case .grid:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridItemCollectionViewCell.reuseIdentifier, for: indexPath) as? GridItemCollectionViewCell
-            cell?.data = model.goods
+            cell?.data = model.goods?[indexPath.item]
         case .banner:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCollectionViewCell.reuseIdentifier, for: indexPath) as? BannerCollectionViewCell
             cell?.data = model.banners
@@ -60,7 +68,7 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             cell?.data = model.goods
         case .style:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: StyleGridItemCollectionViewCell.reuseIdentifier, for: indexPath) as? StyleGridItemCollectionViewCell
-            cell?.data = model.styles
+            cell?.data = model.styles?[indexPath.item]
         }
         
         cell?.setData(cellType)
