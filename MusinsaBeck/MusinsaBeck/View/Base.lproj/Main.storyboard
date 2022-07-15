@@ -34,6 +34,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="384" height="414"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kH-j4-cd8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="414"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1s4-P1-Sdr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="414"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" id="oa3-4U-xhq"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="1s4-P1-Sdr" secondAttribute="bottom" id="6XL-WQ-gu5"/>
+                                                        <constraint firstItem="1s4-P1-Sdr" firstAttribute="top" secondItem="tCY-PP-WW8" secondAttribute="top" id="EDj-ck-Ou8"/>
+                                                        <constraint firstItem="QdL-zC-SQI" firstAttribute="centerX" relation="lessThanOrEqual" secondItem="1s4-P1-Sdr" secondAttribute="trailing" id="FX2-O5-Q5o"/>
+                                                        <constraint firstItem="tCY-PP-WW8" firstAttribute="bottom" secondItem="1s4-P1-Sdr" secondAttribute="bottom" id="mI4-Fi-n9c"/>
+                                                        <constraint firstItem="1s4-P1-Sdr" firstAttribute="leading" secondItem="tCY-PP-WW8" secondAttribute="leading" id="xeO-sF-XvJ"/>
+                                                    </constraints>
+                                                    <viewLayoutGuide key="contentLayoutGuide" id="QdL-zC-SQI"/>
+                                                    <viewLayoutGuide key="frameLayoutGuide" id="tCY-PP-WW8"/>
+                                                </scrollView>
                                                 <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwQ-ab-2Ua">
                                                     <rect key="frame" x="302" y="353.5" width="66" height="28.5"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,12 +67,20 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemMintColor"/>
                                             <constraints>
+                                                <constraint firstItem="9kH-j4-cd8" firstAttribute="leading" secondItem="K2I-Cw-4Xo" secondAttribute="leading" id="D2p-9x-Luv"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZwQ-ab-2Ua" secondAttribute="trailing" constant="16" id="DKB-jh-kfr"/>
                                                 <constraint firstItem="ZwQ-ab-2Ua" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="K2I-Cw-4Xo" secondAttribute="leading" id="I5d-8P-bSi"/>
+                                                <constraint firstAttribute="trailing" secondItem="9kH-j4-cd8" secondAttribute="trailing" id="O9d-VT-64s"/>
                                                 <constraint firstAttribute="bottom" secondItem="ZwQ-ab-2Ua" secondAttribute="bottom" constant="32" id="OOL-qL-d6o"/>
+                                                <constraint firstItem="9kH-j4-cd8" firstAttribute="top" secondItem="K2I-Cw-4Xo" secondAttribute="top" id="OdO-lq-sIn"/>
+                                                <constraint firstAttribute="bottom" secondItem="9kH-j4-cd8" secondAttribute="bottom" id="W3i-Wc-c2O"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="384" height="414"/>
+                                        <connections>
+                                            <outlet property="firstLeadingView" destination="1s4-P1-Sdr" id="5JH-JB-uhw"/>
+                                            <outlet property="scrollView" destination="9kH-j4-cd8" id="aK3-mI-oDG"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ScrollCollectionViewCell" id="To4-Ny-VI1" customClass="ScrollCollectionViewCell" customModule="MusinsaBeck" customModuleProvider="target">
                                         <rect key="frame" x="15" y="489" width="384" height="128"/>
