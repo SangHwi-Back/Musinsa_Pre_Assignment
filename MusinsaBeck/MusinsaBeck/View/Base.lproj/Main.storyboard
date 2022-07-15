@@ -89,7 +89,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="384" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJK-SL-V1G">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJK-SL-V1G">
                                                     <rect key="frame" x="0.0" y="0.0" width="384" height="128"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1x-LU-0ut">
@@ -119,6 +119,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="384" height="128"/>
+                                        <connections>
+                                            <outlet property="firstLeadingView" destination="F1x-LU-0ut" id="IYZ-sH-bgN"/>
+                                            <outlet property="scrollView" destination="hJK-SL-V1G" id="OWf-tW-m3Y"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridItemCollectionViewCell" id="P3K-mu-wz1" customClass="GridItemCollectionViewCell" customModule="MusinsaBeck" customModuleProvider="target">
                                         <rect key="frame" x="15" y="632" width="128" height="128"/>
