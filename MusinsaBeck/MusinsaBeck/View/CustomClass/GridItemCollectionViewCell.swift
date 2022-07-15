@@ -19,14 +19,15 @@ class GridItemCollectionViewCell: UICollectionViewCell, MainCollectionViewCell {
             $0.removeFromSuperview()
         }
         
+        layoutIfNeeded()
+        
         if
             let views = Bundle.main.loadNibNamed("ContentsCollectionViewCell", owner: nil) as? [UIView],
             views.count >= 1,
             let superview = views[1] as? ContentsCollectionView
         {
             contentView.addSubview(superview)
-            
-            layoutIfNeeded()
+            superview.frame = contentView.bounds
             
             superview.linkedImageView.openURL = URL(string: data.linkURL)
             superview.titleLabel.text = data.brandName

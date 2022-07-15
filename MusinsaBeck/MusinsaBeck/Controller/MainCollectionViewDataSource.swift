@@ -44,7 +44,15 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
                 return 0
             }
         case .style:
-            return data.styles?.count ?? 0
+            if let count = data.styles?.count {
+                if count >= 2 {
+                    return 2
+                } else {
+                    return count
+                }
+            } else {
+                return 0
+            }
         }
     }
     
