@@ -6,11 +6,17 @@
 //
 
 import Foundation
+import os.log
 
 class RequestURLModel: Disposable {
-    private var urlString: String = "https://meta.musinsa.com/interview/list.json"
+    private var urlString = Bundle.main.object(forInfoDictionaryKey: "SERVER_URL") as? String
     
-    func getRequest(_ completionHandler: @escaping (Any, Disposable)->Void) {
+    func getRequest(_ completionHandler: @escaping (Any, Disposable) -> Void) {
+        guard let urlString = urlString else {
+            os_log("SERVER_URL not found. Check you have mainConfig.xcconfig")
+            return
+        }
+        
         guard let url = URL(string: urlString) else {
             return
         }
@@ -25,7 +31,12 @@ class RequestURLModel: Disposable {
         }.resume()
     }
     
-    func postRequest(_ completionHandler: @escaping (Any, Disposable)->Void) {
+    func postRequest(_ completionHandler: @escaping (Any, Disposable) -> Void) {
+        guard let urlString = urlString else {
+            os_log("SERVER_URL not found. Check you have mainConfig.xcconfig")
+            return
+        }
+        
         guard let url = URL(string: urlString) else {
             return
         }

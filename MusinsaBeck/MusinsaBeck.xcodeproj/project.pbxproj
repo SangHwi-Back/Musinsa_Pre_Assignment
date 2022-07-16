@@ -30,6 +30,8 @@
 		1B60979A2882801F00281CF5 /* GridLayoutListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6097992882801F00281CF5 /* GridLayoutListModel.swift */; };
 		1B60979C2882F6CA00281CF5 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60979B2882F6CA00281CF5 /* Notification+Name.swift */; };
 		1B60979E2882FB5100281CF5 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */; };
+		1B6097A02882FD6200281CF5 /* mainConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B60979F2882FD6200281CF5 /* mainConfig.xcconfig */; };
+		1B6097A12882FD6200281CF5 /* mainConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B60979F2882FD6200281CF5 /* mainConfig.xcconfig */; };
 		1BE8B97A287EC60900C3DDE8 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B979287EC60900C3DDE8 /* DisposeBag.swift */; };
 		1BE8B982287EC72200C3DDE8 /* MusinsaBeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B981287EC72200C3DDE8 /* MusinsaBeckTests.swift */; };
 		1BE8B989287ED5DE00C3DDE8 /* RequestInterviewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B988287ED5DE00C3DDE8 /* RequestInterviewUseCase.swift */; };
@@ -85,6 +87,8 @@
 		1B6097992882801F00281CF5 /* GridLayoutListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutListModel.swift; sourceTree = "<group>"; };
 		1B60979B2882F6CA00281CF5 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
+		1B60979F2882FD6200281CF5 /* mainConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = mainConfig.xcconfig; path = MusinsaBeck/Resources/mainConfig.xcconfig; sourceTree = SOURCE_ROOT; };
+		1B6097A2288373BB00281CF5 /* debugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debugConfig.xcconfig; sourceTree = "<group>"; };
 		1BE8B979287EC60900C3DDE8 /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
 		1BE8B97F287EC72200C3DDE8 /* MusinsaBeckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusinsaBeckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE8B981287EC72200C3DDE8 /* MusinsaBeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusinsaBeckTests.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 				1B60979B2882F6CA00281CF5 /* Notification+Name.swift */,
 				1B2D6ACC287E571B0061A9FF /* Assets.xcassets */,
 				1B2D6AD1287E571B0061A9FF /* Info.plist */,
+				1B60979F2882FD6200281CF5 /* mainConfig.xcconfig */,
+				1B6097A2288373BB00281CF5 /* debugConfig.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B2D6ADE287E76C00061A9FF /* ContentsCollectionViewCell.xib in Resources */,
+				1B6097A02882FD6200281CF5 /* mainConfig.xcconfig in Resources */,
 				1B2D6AD0287E571B0061A9FF /* LaunchScreen.storyboard in Resources */,
 				1B2D6ACD287E571B0061A9FF /* Assets.xcassets in Resources */,
 				1B2D6ACB287E571A0061A9FF /* Main.storyboard in Resources */,
@@ -360,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B6097A12882FD6200281CF5 /* mainConfig.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +456,7 @@
 /* Begin XCBuildConfiguration section */
 		1B2D6AD2287E571B0061A9FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B6097A2288373BB00281CF5 /* debugConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -508,6 +517,7 @@
 		};
 		1B2D6AD3287E571B0061A9FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B60979F2882FD6200281CF5 /* mainConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
