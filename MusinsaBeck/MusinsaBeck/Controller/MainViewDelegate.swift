@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol MainViewDelegate {
+    func didSelectReusableView(_ section: Int)
+}

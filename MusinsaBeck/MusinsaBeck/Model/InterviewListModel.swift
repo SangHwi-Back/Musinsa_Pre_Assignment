@@ -11,6 +11,9 @@ class InterviewListModel {
     private(set) var data: Data
     private(set) var list: InterviewList
     
+    private var listCount = MainCellListCount()
+    private(set) var currentListCount = MainCellListCount()
+    
     var entities: [ResponseData] {
         list.data
     }
@@ -46,6 +49,43 @@ class InterviewListModel {
         contents(section)?.type.cellType()
     }
     
+    func reloadSectionsCount() {
+        listCount.grid = 0
+        listCount.style = 0
+        
+        for (index, entity) in entities.enumerated() {
+            switch cellType(index) {
+            case .grid:
+                listCount.grid += (entity.contents.goods?.count ?? 0)
+            case .style:
+                listCount.style += (entity.contents.styles?.count ?? 0)
+            default:
+                continue
+            }
+        }
+        
+        showMoreButtonTouchUpInside(.grid)
+        showMoreButtonTouchUpInside(.style)
+    }
+    
+    func showMoreButtonTouchUpInside(_ cellType: MainCellType) {
+        if cellType == .grid {
+            currentListCount.grid += 6
+            
+            if listCount.grid < currentListCount.grid {
+                currentListCount.grid = listCount.grid
+            }
+        }
+        
+        if cellType == .style {
+            currentListCount.style += 4
+            
+            if listCount.style < currentListCount.style {
+                currentListCount.style = listCount.style
+            }
+        }
+    }
+    
     // MARK: - Need to check index.
     func contents(_ index: Int) -> Contents? {
         guard check(index) else {
@@ -74,5 +114,25 @@ class InterviewListModel {
     // MARK: - Check index
     private func check(_ index: Int) -> Bool {
         return index >= 0 && list.data.count > index
+    }
+}
+
+struct MainCellListCount {
+    let banner = 1
+    var grid = 0
+    let scroll = 1
+    var style = 0
+    
+    func getCount(type: MainCellType) -> Int {
+        switch type {
+        case .grid:
+            return grid
+        case .scroll:
+            return scroll
+        case .banner:
+            return banner
+        case .style:
+            return style
+        }
     }
 }

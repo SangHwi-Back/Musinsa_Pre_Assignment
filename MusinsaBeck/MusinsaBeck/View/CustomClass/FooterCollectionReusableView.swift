@@ -19,7 +19,14 @@ class FooterCollectionReusableView: UICollectionReusableView {
     
     private(set) var type: MainFooterType = .showMore
     
+    var delegate: MainViewDelegate?
+    var section: Int?
+    
     func setFooterData(_ footer: Footer?) {
+        gestureRecognizers?.forEach({
+            removeGestureRecognizer($0)
+        })
+        
         if footer?.type == MainFooterType.refresh.rawValue {
             
             type = .refresh
@@ -39,7 +46,23 @@ class FooterCollectionReusableView: UICollectionReusableView {
             type = .showMore
             titleLabel.text = "더보기"
             thumbnailImageView.isHidden = true
+            setTapGesture()
             setNeedsDisplay()
+        }
+    }
+    
+    private func setTapGesture() {
+        let gesture = UITapGestureRecognizer()
+        
+        gesture.addTarget(self, action: #selector(showMoreButtonTouchUpInside))
+        
+        addGestureRecognizer(gesture)
+        isUserInteractionEnabled = true
+    }
+    
+    @objc func showMoreButtonTouchUpInside() {
+        if let section = section {
+            delegate?.didSelectReusableView(section)
         }
     }
 }

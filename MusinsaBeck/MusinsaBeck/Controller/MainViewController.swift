@@ -25,6 +25,12 @@ class MainViewController: UIViewController {
                 self.mainCollectionView.reloadData()
             }
         }
+        
+        NotificationCenter.default.addObserver(forName: nil, object: dataSource, queue: .main) { noti in
+            if let indexPath = noti.userInfo?["IndexPath"] as? IndexPath {
+                self.mainCollectionView.reloadSections(IndexSet(arrayLiteral: indexPath.section))
+            }
+        }
     }
 }
 

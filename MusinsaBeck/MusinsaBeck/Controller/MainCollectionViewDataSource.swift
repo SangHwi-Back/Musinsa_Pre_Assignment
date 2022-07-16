@@ -26,34 +26,11 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        guard let data = listModel?.contents(section), let cellType = getCellType(section) else {
+        guard let cellType = getCellType(section) else {
             return 0
         }
         
-        switch cellType {
-        case .banner, .scroll:
-            return 1
-        case .grid:
-            if let count = data.goods?.count {
-                if count >= 3 {
-                    return 3
-                } else {
-                    return count
-                }
-            } else {
-                return 0
-            }
-        case .style:
-            if let count = data.styles?.count {
-                if count >= 2 {
-                    return 2
-                } else {
-                    return count
-                }
-            } else {
-                return 0
-            }
-        }
+        return listModel?.currentListCount.getCount(type: cellType) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -99,6 +76,8 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.reuseIdentifier, for: indexPath) as! FooterCollectionReusableView
             footer.isHidden = isFooterHidden(indexPath.section)
             footer.setFooterData(listModel?.footer(indexPath.section))
+            footer.delegate = self
+            footer.section = indexPath.section
             
             return footer
         default:
@@ -115,6 +94,7 @@ extension MainCollectionViewDataSource {
             switch result {
             case .success(let model):
                 self.listModel = model
+                model.reloadSectionsCount()
             case .failure(_):
                 os_log("Request interviewListFailed")
             }
@@ -137,6 +117,19 @@ extension MainCollectionViewDataSource {
     
     func isFooterHidden(_ section: Int) -> Bool {
         listModel?.footer(section) == nil
+    }
+}
+
+extension MainCollectionViewDataSource: MainViewDelegate {
+    func didSelectReusableView(_ section: Int) {
+        if let type = listModel?.cellType(section) {
+            listModel?.showMoreButtonTouchUpInside(type)
+            NotificationCenter.default.post(
+                name: NSNotification.Name(rawValue: ""),
+                object: self,
+                userInfo: ["IndexPath": IndexPath(item: 0, section: section)]
+            )
+        }
     }
 }
 
