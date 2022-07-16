@@ -26,6 +26,7 @@
 		1B2D6AF8287E9C620061A9FF /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AF7287E9C620061A9FF /* ResponseData.swift */; };
 		1B2D6AFB287EAF1A0061A9FF /* UseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */; };
 		1B2D6AFE287EAFBD0061A9FF /* UseCaseResponsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */; };
+		1B6097982882483B00281CF5 /* MainViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6097972882483B00281CF5 /* MainViewDelegate.swift */; };
 		1BE8B97A287EC60900C3DDE8 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B979287EC60900C3DDE8 /* DisposeBag.swift */; };
 		1BE8B982287EC72200C3DDE8 /* MusinsaBeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B981287EC72200C3DDE8 /* MusinsaBeckTests.swift */; };
 		1BE8B989287ED5DE00C3DDE8 /* RequestInterviewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B988287ED5DE00C3DDE8 /* RequestInterviewUseCase.swift */; };
@@ -77,6 +78,7 @@
 		1B2D6AF7287E9C620061A9FF /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseContainer.swift; sourceTree = "<group>"; };
 		1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseResponsible.swift; sourceTree = "<group>"; };
+		1B6097972882483B00281CF5 /* MainViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDelegate.swift; sourceTree = "<group>"; };
 		1BE8B979287EC60900C3DDE8 /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
 		1BE8B97F287EC72200C3DDE8 /* MusinsaBeckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusinsaBeckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE8B981287EC72200C3DDE8 /* MusinsaBeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusinsaBeckTests.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				1B2D6AC7287E571A0061A9FF /* MainViewController.swift */,
 				1BE8B9A1287FD32600C3DDE8 /* MainCollectionViewDataSource.swift */,
+				1B6097972882483B00281CF5 /* MainViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				1B2D6AC4287E571A0061A9FF /* AppDelegate.swift in Sources */,
 				1B2D6AE4287E90A10061A9FF /* CommonPageableScrollView.swift in Sources */,
 				1B2D6AF8287E9C620061A9FF /* ResponseData.swift in Sources */,
+				1B6097982882483B00281CF5 /* MainViewDelegate.swift in Sources */,
 				1B2D6AC6287E571A0061A9FF /* SceneDelegate.swift in Sources */,
 				1B2D6AE0287E7CF70061A9FF /* ContentsCollectionView.swift in Sources */,
 				1BE8B9A0287FD1B900C3DDE8 /* FooterCollectionReusableView.swift in Sources */,

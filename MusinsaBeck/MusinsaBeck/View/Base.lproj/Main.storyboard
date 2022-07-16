@@ -170,6 +170,9 @@
                                             <buttonConfiguration key="configuration" style="plain" title="전체">
                                                 <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="linkedButtonTouchUpInside:" destination="ohc-Ou-7rv" eventType="touchUpInside" id="SXh-40-al4"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -181,6 +184,12 @@
                                         <constraint firstItem="5Pf-EO-hpu" firstAttribute="top" secondItem="ohc-Ou-7rv" secondAttribute="topMargin" id="ZEd-jG-xUY"/>
                                         <constraint firstItem="5Pf-EO-hpu" firstAttribute="centerX" secondItem="ohc-Ou-7rv" secondAttribute="centerX" id="acf-26-qQU"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="headerImageView" destination="4Fv-Rr-Iot" id="zVJ-15-1RN"/>
+                                        <outlet property="headerStackView" destination="5Pf-EO-hpu" id="oVe-7c-yLk"/>
+                                        <outlet property="headerTitleLabel" destination="JjF-HZ-aTY" id="EjH-eW-bFf"/>
+                                        <outlet property="linkedButton" destination="Zf4-iH-Dr4" id="TVR-8u-fmH"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FooterCollectionReusableView" id="GfG-p8-b3T" customClass="FooterCollectionReusableView" customModule="MusinsaBeck" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="770" width="414" height="50"/>
@@ -195,12 +204,18 @@
                                             <buttonConfiguration key="configuration" style="plain" title="더보기">
                                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="showMoreButtonTouchUpInside:" destination="GfG-p8-b3T" eventType="touchUpInside" id="8Vp-fe-ATz"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ZVV-6f-hFw" firstAttribute="centerY" secondItem="GfG-p8-b3T" secondAttribute="centerY" id="ZK4-lg-u3s"/>
                                         <constraint firstItem="ZVV-6f-hFw" firstAttribute="centerX" secondItem="GfG-p8-b3T" secondAttribute="centerX" id="cCD-iu-c1v"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="showMoreButton" destination="ZVV-6f-hFw" id="FRh-tn-Msq"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>

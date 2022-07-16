@@ -90,12 +90,15 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier, for: indexPath) as! HeaderCollectionReusableView
             header.isHidden = isHeaderHidden(indexPath.section)
+            header.setHeaderData(listModel?.header(indexPath.section))
             
-            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier, for: indexPath) as! HeaderCollectionReusableView
+            return header
+            
         case UICollectionView.elementKindSectionFooter:
             
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.reuseIdentifier, for: indexPath) as! FooterCollectionReusableView
             footer.isHidden = isFooterHidden(indexPath.section)
+            footer.setFooterData(listModel?.footer(indexPath.section))
             
             return footer
         default:
