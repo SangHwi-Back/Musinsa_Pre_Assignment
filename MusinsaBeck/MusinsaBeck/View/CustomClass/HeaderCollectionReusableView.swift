@@ -49,18 +49,10 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     private func setHeaderImage() {
         guard let iconURL = iconURL else {
+            self.headerImageView.isHidden = true
             return
         }
         
-        URLSession.shared.dataTask(with: iconURL) { data, _, _ in
-            if let data = data, let image = UIImage(data: data) {
-                DispatchQueue.main.async { [weak self] in
-                    self?.headerImageView.isHidden = false
-                    self?.headerImageView.image = image
-                }
-            } else {
-                self.headerImageView.isHidden = true
-            }
-        }.resume()
+        headerImageView.setImage(from: iconURL)
     }
 }

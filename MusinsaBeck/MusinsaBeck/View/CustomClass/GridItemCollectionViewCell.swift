@@ -33,16 +33,7 @@ class GridItemCollectionViewCell: UICollectionViewCell, MainCollectionViewCell {
             superview.titleLabel.text = data.brandName
             superview.descriptionLabel.text = "\(data.price) \(data.saleRate)%"
             superview.couponLabel.isHidden = !data.hasCoupon
-            
-            if let url = URL(string: data.thumbnailURL) {
-                URLSession.shared.dataTask(with: url) { data, _, _ in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            superview.linkedImageView.image = UIImage(data: data)
-                        }
-                    }
-                }.resume()
-            }
+            superview.linkedImageView.setImage(from: data.thumbnailURL)
         }
     }
 }

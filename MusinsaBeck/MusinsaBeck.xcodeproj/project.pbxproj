@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0B3CEB28837DEB003CA14F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B3CEA28837DEB003CA14F /* UIImageView+Extension.swift */; };
 		1B2D6AC4287E571A0061A9FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AC3287E571A0061A9FF /* AppDelegate.swift */; };
 		1B2D6AC6287E571A0061A9FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AC5287E571A0061A9FF /* SceneDelegate.swift */; };
 		1B2D6AC8287E571A0061A9FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AC7287E571A0061A9FF /* MainViewController.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B0B3CEA28837DEB003CA14F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		1B2D6AC0287E571A0061A9FF /* MusinsaBeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusinsaBeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B2D6AC3287E571A0061A9FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B2D6AC5287E571A0061A9FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		1B2D6AEA287E971E0061A9FF /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1B0B3CEA28837DEB003CA14F /* UIImageView+Extension.swift */,
 				1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */,
 				1B2D6AE3287E90A10061A9FF /* CommonPageableScrollView.swift */,
 				1B2D6AE1287E8C4A0061A9FF /* CommonRoundedButton.swift */,
@@ -381,6 +384,7 @@
 				1BE8B9A2287FD32600C3DDE8 /* MainCollectionViewDataSource.swift in Sources */,
 				1B2D6AF0287E9BF60061A9FF /* Header.swift in Sources */,
 				1B2D6AFB287EAF1A0061A9FF /* UseCaseContainer.swift in Sources */,
+				1B0B3CEB28837DEB003CA14F /* UIImageView+Extension.swift in Sources */,
 				1B2D6AFE287EAFBD0061A9FF /* UseCaseResponsible.swift in Sources */,
 				1B2D6AE2287E8C4A0061A9FF /* CommonRoundedButton.swift in Sources */,
 				1BE8B97A287EC60900C3DDE8 /* DisposeBag.swift in Sources */,

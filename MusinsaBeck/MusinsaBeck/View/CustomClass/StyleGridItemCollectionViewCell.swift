@@ -31,16 +31,7 @@ class StyleGridItemCollectionViewCell: UICollectionViewCell, MainCollectionViewC
             superview.linkedImageView.openURL = URL(string: data.linkURL)
             superview.playButton.layer.borderWidth = 1
             superview.playButton.layer.borderColor = UIColor.label.cgColor
-            
-            if let url = URL(string: data.thumbnailURL) {
-                URLSession.shared.dataTask(with: url) { data, _, _ in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            superview.linkedImageView.image = UIImage(data: data)
-                        }
-                    }
-                }.resume()
-            }
+            superview.linkedImageView.setImage(from: data.thumbnailURL)
         }
     }
 }

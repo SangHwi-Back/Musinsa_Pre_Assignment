@@ -44,16 +44,7 @@ class ScrollCollectionViewCell: UICollectionViewCell, MainCollectionViewCell {
                 superview.titleLabel.text = entity.brandName
                 superview.descriptionLabel.text = "\(entity.price) \(entity.saleRate)%"
                 superview.couponLabel.isHidden = !entity.hasCoupon
-                
-                if let url = URL(string: entity.thumbnailURL) {
-                    URLSession.shared.dataTask(with: url) { data, _, _ in
-                        if let data = data {
-                            DispatchQueue.main.async {
-                                superview.linkedImageView.image = UIImage(data: data)
-                            }
-                        }
-                    }.resume()
-                }
+                superview.linkedImageView.setImage(from: entity.thumbnailURL)
             }
             
             if let lastView = scrollView.subviews.last {

@@ -34,15 +34,7 @@ class FooterCollectionReusableView: UICollectionReusableView {
             type = .refresh
             titleLabel.text = "새로운 추천"
             thumbnailImageView.isHidden = false
-            
-            if let urlString = footer?.iconURL, let url = URL(string: urlString) {
-                URLSession.shared.dataTask(with: url) { data, _, _ in
-                    if let data = data {
-                        self.thumbnailImageView.image = UIImage(data: data)
-                    }
-                    self.setNeedsDisplay()
-                }
-            }
+            thumbnailImageView.setImage(from: footer?.iconURL)
             
         } else {
             type = .showMore
