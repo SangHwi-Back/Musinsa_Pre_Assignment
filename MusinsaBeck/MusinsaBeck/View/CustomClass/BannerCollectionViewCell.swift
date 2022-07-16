@@ -12,6 +12,7 @@ class BannerCollectionViewCell: UICollectionViewCell, MainCollectionViewCell {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var firstLeadingView: UIView?
+    @IBOutlet weak var pageButton: CommonRoundedButton!
     
     var data: Any?
     
@@ -22,22 +23,24 @@ class BannerCollectionViewCell: UICollectionViewCell, MainCollectionViewCell {
         
         layoutIfNeeded()
         
+        scrollView.delegate = self
         scrollView.subviews.forEach {
             $0.removeFromSuperview()
         }
         
-        for entity in data {
+        for (index, entity) in data.enumerated() {
             
             guard let entity = entity as? Banners else {
                 continue
             }
             
-            let lastView = scrollView.subviews.last ?? UIView()
             let imageView = LinkedUIImageView(frame: scrollView.frame)
             
             scrollView.addSubview(imageView)
-            imageView.frame.origin = CGPoint(x: lastView.frame.maxX, y: 0)
+            imageView.frame.origin = CGPoint(x: CGFloat(index) * scrollView.frame.width, y: 0)
             imageView.openURL = URL(string: entity.linkURL)
+            imageView.index = index
+            imageView.tag = index
             
             if let url = URL(string: entity.thumbnailURL) {
                 URLSession.shared.dataTask(with: url) { data, _, _ in
@@ -51,14 +54,26 @@ class BannerCollectionViewCell: UICollectionViewCell, MainCollectionViewCell {
         }
         
         if let lastView = scrollView.subviews.last {
+            pageButton.setTitle("1 / \(data.count) >", for: .normal)
             scrollView.contentSize = CGSize(width: lastView.frame.maxX, height: scrollView.frame.height)
         }
     }
 }
 
-class LinkedUIImageView: UIImageView {
+extension BannerCollectionViewCell: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let lastString = pageButton.currentTitle?.split(separator: "/").last {
+            
+            let index = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+            pageButton.setTitle("\(index+1) /\(lastString)", for: .normal)
+        }
+    }
+}
+
+class LinkedUIImageView: UIImageView, IndexedImage {
     
     var openURL: URL?
+    var index: Int = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,4 +105,13 @@ class LinkedUIImageView: UIImageView {
             os_log("Unnecessary URL \(self.openURL?.absoluteString ?? "Unknown").")
         }
     }
+    
+    override func draw(_ layer: CALayer, in ctx: CGContext) {
+        super.draw(layer, in: ctx)
+        print(index)
+    }
+}
+
+protocol IndexedImage {
+    var index: Int { get set }
 }

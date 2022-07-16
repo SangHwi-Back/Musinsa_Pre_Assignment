@@ -10,4 +10,5 @@ import UIKit
 class StyleCollectionView: UIView {
     
     @IBOutlet weak var linkedImageView: LinkedUIImageView!
+    @IBOutlet weak var playButton: CommonRoundedButton!
 }

@@ -17,8 +17,12 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         if let urlString = header?.linkURL {
             openURL = URL(string: urlString)
         }
+        
         if let urlString = header?.iconURL {
             iconURL = URL(string: urlString)
+            headerImageView.isHidden = false
+        } else {
+            headerImageView.isHidden = true
         }
     }
     
@@ -49,12 +53,15 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         }
         
         URLSession.shared.dataTask(with: iconURL) { data, _, _ in
-            if let data = data {
+            if let data = data, let image = UIImage(data: data) {
                 DispatchQueue.main.async { [weak self] in
-                    self?.headerImageView.image = UIImage(data: data)
+                    self?.headerImageView.isHidden = false
+                    self?.headerImageView.image = image
                 }
+            } else {
+                self.headerImageView.isHidden = true
             }
-        }
+        }.resume()
     }
 }
 

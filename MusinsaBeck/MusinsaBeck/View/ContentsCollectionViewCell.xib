@@ -106,6 +106,7 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nosign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LBR-zJ-XlJ" customClass="LinkedUIImageView" customModule="MusinsaBeck" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.5" width="125" height="139.5"/>
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdf-mJ-3Wd">
                             <rect key="frame" x="0.0" y="140.5" width="125" height="60.5"/>
@@ -123,7 +124,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿠폰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IC1-Xu-eP4">
+                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿠폰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="IC1-Xu-eP4">
                                     <rect key="frame" x="98" y="40.5" width="19" height="12"/>
                                     <color key="backgroundColor" systemColor="linkColor"/>
                                     <constraints>
@@ -133,9 +134,9 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="395,800원 20%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="hB6-uc-hO8">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="395,800원 20%" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hB6-uc-hO8">
                                     <rect key="frame" x="8" y="40.5" width="82" height="12"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -144,9 +145,9 @@
                             <constraints>
                                 <constraint firstAttribute="trailingMargin" secondItem="TZG-8d-yRu" secondAttribute="trailing" id="6Cj-OC-vIA"/>
                                 <constraint firstItem="TZG-8d-yRu" firstAttribute="top" secondItem="mdf-mJ-3Wd" secondAttribute="topMargin" id="7Rb-al-xE5"/>
-                                <constraint firstItem="IC1-Xu-eP4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TZG-8d-yRu" secondAttribute="bottom" id="BSS-Xq-sAS"/>
                                 <constraint firstItem="hB6-uc-hO8" firstAttribute="leading" secondItem="mdf-mJ-3Wd" secondAttribute="leadingMargin" id="Hut-Rb-pdl"/>
                                 <constraint firstItem="IC1-Xu-eP4" firstAttribute="bottom" secondItem="mdf-mJ-3Wd" secondAttribute="bottomMargin" id="KNU-9c-NKX"/>
+                                <constraint firstItem="IC1-Xu-eP4" firstAttribute="top" secondItem="hB6-uc-hO8" secondAttribute="top" id="N1b-Qp-kWM"/>
                                 <constraint firstItem="hB6-uc-hO8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TZG-8d-yRu" secondAttribute="bottom" id="N9G-5q-0au"/>
                                 <constraint firstItem="TZG-8d-yRu" firstAttribute="leading" secondItem="mdf-mJ-3Wd" secondAttribute="leadingMargin" id="RKm-IN-Da5"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="IC1-Xu-eP4" secondAttribute="trailing" id="VVU-4e-lal"/>
@@ -184,7 +185,7 @@
                 <outlet property="linkedImageView" destination="LBR-zJ-XlJ" id="3L8-eP-LgM"/>
                 <outlet property="titleLabel" destination="TZG-8d-yRu" id="p3W-c9-JC6"/>
             </connections>
-            <point key="canvasLocation" x="607.97101449275362" y="260.82589285714283"/>
+            <point key="canvasLocation" x="606.52173913043487" y="260.82589285714283"/>
         </view>
         <view contentMode="scaleToFill" id="2Cl-sZ-lja" customClass="StyleCollectionView" customModule="MusinsaBeck" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="125" height="200"/>
@@ -220,6 +221,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="linkedImageView" destination="5sd-XF-tYu" id="85Q-3F-Fu1"/>
+                <outlet property="playButton" destination="Xk1-75-tXH" id="n8D-NW-FDy"/>
             </connections>
             <point key="canvasLocation" x="878.98550724637687" y="260.49107142857144"/>
         </view>

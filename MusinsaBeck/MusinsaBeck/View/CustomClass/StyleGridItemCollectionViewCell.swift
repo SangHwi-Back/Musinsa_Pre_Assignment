@@ -29,6 +29,8 @@ class StyleGridItemCollectionViewCell: UICollectionViewCell, MainCollectionViewC
             contentView.addSubview(superview)
             superview.frame = contentView.bounds
             superview.linkedImageView.openURL = URL(string: data.linkURL)
+            superview.playButton.layer.borderWidth = 1
+            superview.playButton.layer.borderColor = UIColor.label.cgColor
             
             if let url = URL(string: data.thumbnailURL) {
                 URLSession.shared.dataTask(with: url) { data, _, _ in

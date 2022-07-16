@@ -15,8 +15,7 @@ class CommonRoundedButton: UIButton {
     }
     
     private func makeUI() {
-        backgroundColor = .darkGray
-        layer.opacity = 0.5
+        layer.opacity = 0.3
         layer.cornerRadius = frame.height / 2
         layer.masksToBounds = true
     }
