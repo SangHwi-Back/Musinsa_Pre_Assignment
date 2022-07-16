@@ -8,8 +8,8 @@
 import UIKit
 
 enum MainFooterType: String {
-    case refresh
-    case showMore
+    case refresh = "REFRESH"
+    case showMore = "MORE"
 }
 
 class FooterCollectionReusableView: UICollectionReusableView {
@@ -27,7 +27,9 @@ class FooterCollectionReusableView: UICollectionReusableView {
             removeGestureRecognizer($0)
         })
         
-        if footer?.type == MainFooterType.refresh.rawValue {
+        setTapGesture()
+        
+        if footer?.type == MainFooterType.refresh.rawValue.uppercased() {
             
             type = .refresh
             titleLabel.text = "새로운 추천"
@@ -46,7 +48,6 @@ class FooterCollectionReusableView: UICollectionReusableView {
             type = .showMore
             titleLabel.text = "더보기"
             thumbnailImageView.isHidden = true
-            setTapGesture()
             setNeedsDisplay()
         }
     }

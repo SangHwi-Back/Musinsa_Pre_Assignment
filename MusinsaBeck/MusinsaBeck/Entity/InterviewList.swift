@@ -8,5 +8,5 @@
 import Foundation
 
 struct InterviewList: Codable {
-    let data: [ResponseData]
+    var data: [ResponseData]
 }

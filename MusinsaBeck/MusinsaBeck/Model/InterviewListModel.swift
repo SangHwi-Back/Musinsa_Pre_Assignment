@@ -68,6 +68,27 @@ class InterviewListModel {
         showMoreButtonTouchUpInside(.style)
     }
     
+    func reloadSectionCount(section index: Int) {
+        guard check(index), let cellType = cellType(index) else {
+            return
+        }
+        
+        switch cellType {
+        case .grid:
+            currentListCount.grid = 0
+            list.data[index].contents.goods?.shuffle()
+        case .scroll:
+            list.data[index].contents.goods?.shuffle()
+        case .style:
+            currentListCount.style = 0
+            list.data[index].contents.styles?.shuffle()
+        default:
+            return
+        }
+        
+        showMoreButtonTouchUpInside(cellType)
+    }
+    
     func showMoreButtonTouchUpInside(_ cellType: MainCellType) {
         if cellType == .grid {
             currentListCount.grid += 6
@@ -109,6 +130,21 @@ class InterviewListModel {
         }
         
         return list.data[index].footer
+    }
+    
+    func footerType(_ index: Int) -> MainFooterType? {
+        guard check(index), let footer = list.data[index].footer else {
+            return nil
+        }
+        
+        switch footer.type.uppercased() {
+        case MainFooterType.showMore.rawValue.uppercased():
+            return .showMore
+        case MainFooterType.refresh.rawValue.uppercased():
+            return .refresh
+        default:
+            return nil
+        }
     }
     
     // MARK: - Check index

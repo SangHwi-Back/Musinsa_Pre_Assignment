@@ -10,6 +10,6 @@ import Foundation
 struct Contents: Codable {
     let type: String
     let banners: [Banners]?
-    let goods: [Goods]?
-    let styles: [Styles]?
+    var goods: [Goods]?
+    var styles: [Styles]?
 }

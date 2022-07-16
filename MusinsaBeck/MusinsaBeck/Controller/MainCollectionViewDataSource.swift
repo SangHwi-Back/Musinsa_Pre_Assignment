@@ -123,7 +123,16 @@ extension MainCollectionViewDataSource {
 extension MainCollectionViewDataSource: MainViewDelegate {
     func didSelectReusableView(_ section: Int) {
         if let type = listModel?.cellType(section) {
-            listModel?.showMoreButtonTouchUpInside(type)
+            
+            switch listModel?.footerType(section) {
+            case .refresh:
+                listModel?.reloadSectionCount(section: section)
+            case .showMore:
+                listModel?.showMoreButtonTouchUpInside(type)
+            default:
+                return
+            }
+            
             NotificationCenter.default.post(
                 name: NSNotification.Name(rawValue: ""),
                 object: self,

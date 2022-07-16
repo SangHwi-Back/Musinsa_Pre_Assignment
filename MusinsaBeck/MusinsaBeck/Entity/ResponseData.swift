@@ -9,6 +9,6 @@ import Foundation
 
 struct ResponseData: Codable {
     let header: Header?
-    let contents: Contents
+    var contents: Contents
     let footer: Footer?
 }
