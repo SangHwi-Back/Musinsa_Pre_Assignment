@@ -137,10 +137,10 @@ class InterviewListModel {
             return nil
         }
         
-        switch footer.type.uppercased() {
-        case MainFooterType.showMore.rawValue.uppercased():
+        switch footer.type.footerType() {
+        case .showMore:
             return .showMore
-        case MainFooterType.refresh.rawValue.uppercased():
+        case .refresh:
             return .refresh
         default:
             return nil

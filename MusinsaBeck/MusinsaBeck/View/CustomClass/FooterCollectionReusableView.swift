@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum MainFooterType: String {
+enum MainFooterType: String, CaseIterable {
     case refresh = "REFRESH"
     case showMore = "MORE"
 }

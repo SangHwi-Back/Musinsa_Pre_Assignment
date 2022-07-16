@@ -147,6 +147,10 @@ extension String {
     func cellType() -> MainCellType? {
         MainCellType.allCases.first(where: { $0.rawValue == self })
     }
+    
+    func footerType() -> MainFooterType? {
+        MainFooterType.allCases.first(where: {$0.rawValue == self.uppercased()})
+    }
 }
 
 extension IndexPath {
