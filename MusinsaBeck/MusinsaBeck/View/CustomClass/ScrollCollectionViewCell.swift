@@ -38,7 +38,7 @@ class ScrollCollectionViewCell: UICollectionViewCell, MainCollectionViewCell {
                 superview.frame = CGRect(
                     origin: CGPoint(x: lastView.frame.maxX, y: 0),
                     size: CGSize(width: scrollView.frame.height / 1.6, height: scrollView.frame.height)
-                ) 
+                )
                 
                 superview.linkedImageView.openURL = URL(string: entity.linkURL)
                 superview.titleLabel.text = entity.brandName
