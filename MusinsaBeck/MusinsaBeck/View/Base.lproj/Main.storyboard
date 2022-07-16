@@ -65,7 +65,6 @@
                                                     </buttonConfiguration>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemMintColor"/>
                                             <constraints>
                                                 <constraint firstItem="9kH-j4-cd8" firstAttribute="leading" secondItem="K2I-Cw-4Xo" secondAttribute="leading" id="D2p-9x-Luv"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZwQ-ab-2Ua" secondAttribute="trailing" constant="16" id="DKB-jh-kfr"/>
@@ -110,7 +109,6 @@
                                                     <viewLayoutGuide key="frameLayoutGuide" id="u8w-6W-gB4"/>
                                                 </scrollView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="hJK-SL-V1G" secondAttribute="trailing" id="Sdy-Ih-Hku"/>
                                                 <constraint firstItem="hJK-SL-V1G" firstAttribute="leading" secondItem="Lwb-zf-ISN" secondAttribute="leading" id="VPn-Id-VdH"/>
@@ -131,7 +129,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StyleGridItemCollectionViewCell" id="PgI-xI-Fsl" customClass="StyleGridItemCollectionViewCell" customModule="MusinsaBeck" customModuleProvider="target">
                                         <rect key="frame" x="146" y="632" width="128" height="128"/>
@@ -140,7 +137,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HeaderCollectionReusableView" id="ohc-Ou-7rv" customClass="HeaderCollectionReusableView" customModule="MusinsaBeck" customModuleProvider="target">
@@ -176,7 +172,6 @@
                                             </buttonConfiguration>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                     <constraints>
                                         <constraint firstItem="Zf4-iH-Dr4" firstAttribute="centerY" secondItem="ohc-Ou-7rv" secondAttribute="centerY" id="0Rq-dp-MK0"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Zf4-iH-Dr4" secondAttribute="trailing" id="87o-Co-L3f"/>
@@ -202,7 +197,6 @@
                                             </buttonConfiguration>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemRedColor"/>
                                     <constraints>
                                         <constraint firstItem="ZVV-6f-hFw" firstAttribute="centerY" secondItem="GfG-p8-b3T" secondAttribute="centerY" id="ZK4-lg-u3s"/>
                                         <constraint firstItem="ZVV-6f-hFw" firstAttribute="centerX" secondItem="GfG-p8-b3T" secondAttribute="centerX" id="cCD-iu-c1v"/>
@@ -234,24 +228,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
