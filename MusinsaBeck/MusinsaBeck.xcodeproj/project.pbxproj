@@ -28,6 +28,8 @@
 		1B2D6AFE287EAFBD0061A9FF /* UseCaseResponsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */; };
 		1B6097982882483B00281CF5 /* MainViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6097972882483B00281CF5 /* MainViewDelegate.swift */; };
 		1B60979A2882801F00281CF5 /* GridLayoutListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6097992882801F00281CF5 /* GridLayoutListModel.swift */; };
+		1B60979C2882F6CA00281CF5 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60979B2882F6CA00281CF5 /* Notification+Name.swift */; };
+		1B60979E2882FB5100281CF5 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */; };
 		1BE8B97A287EC60900C3DDE8 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B979287EC60900C3DDE8 /* DisposeBag.swift */; };
 		1BE8B982287EC72200C3DDE8 /* MusinsaBeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B981287EC72200C3DDE8 /* MusinsaBeckTests.swift */; };
 		1BE8B989287ED5DE00C3DDE8 /* RequestInterviewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8B988287ED5DE00C3DDE8 /* RequestInterviewUseCase.swift */; };
@@ -81,6 +83,8 @@
 		1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseResponsible.swift; sourceTree = "<group>"; };
 		1B6097972882483B00281CF5 /* MainViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDelegate.swift; sourceTree = "<group>"; };
 		1B6097992882801F00281CF5 /* GridLayoutListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutListModel.swift; sourceTree = "<group>"; };
+		1B60979B2882F6CA00281CF5 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
+		1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		1BE8B979287EC60900C3DDE8 /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
 		1BE8B97F287EC72200C3DDE8 /* MusinsaBeckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusinsaBeckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE8B981287EC72200C3DDE8 /* MusinsaBeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusinsaBeckTests.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			children = (
 				1B2D6AC3287E571A0061A9FF /* AppDelegate.swift */,
 				1B2D6AC5287E571A0061A9FF /* SceneDelegate.swift */,
+				1B60979B2882F6CA00281CF5 /* Notification+Name.swift */,
 				1B2D6ACC287E571B0061A9FF /* Assets.xcassets */,
 				1B2D6AD1287E571B0061A9FF /* Info.plist */,
 			);
@@ -186,6 +191,7 @@
 		1B2D6AEA287E971E0061A9FF /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */,
 				1B2D6AE3287E90A10061A9FF /* CommonPageableScrollView.swift */,
 				1B2D6AE1287E8C4A0061A9FF /* CommonRoundedButton.swift */,
 				1B2D6ADF287E7CF70061A9FF /* ContentsCollectionView.swift */,
@@ -376,11 +382,13 @@
 				1B2D6AC4287E571A0061A9FF /* AppDelegate.swift in Sources */,
 				1B2D6AE4287E90A10061A9FF /* CommonPageableScrollView.swift in Sources */,
 				1B2D6AF8287E9C620061A9FF /* ResponseData.swift in Sources */,
+				1B60979E2882FB5100281CF5 /* UICollectionReusableView+Extension.swift in Sources */,
 				1B60979A2882801F00281CF5 /* GridLayoutListModel.swift in Sources */,
 				1B6097982882483B00281CF5 /* MainViewDelegate.swift in Sources */,
 				1B2D6AC6287E571A0061A9FF /* SceneDelegate.swift in Sources */,
 				1B2D6AE0287E7CF70061A9FF /* ContentsCollectionView.swift in Sources */,
 				1BE8B9A0287FD1B900C3DDE8 /* FooterCollectionReusableView.swift in Sources */,
+				1B60979C2882F6CA00281CF5 /* Notification+Name.swift in Sources */,
 				1B2D6AF2287E9BFE0061A9FF /* Footer.swift in Sources */,
 				1BE8B9A4287FF8E100C3DDE8 /* MainCollectionViewCell.swift in Sources */,
 				1B2D6AF4287E9C310061A9FF /* Goods.swift in Sources */,

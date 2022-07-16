@@ -26,8 +26,12 @@ class MainViewController: UIViewController {
             }
         }
         
-        NotificationCenter.default.addObserver(forName: nil, object: dataSource, queue: .main) { noti in
-            if let indexPath = noti.userInfo?["IndexPath"] as? IndexPath {
+        NotificationCenter.default.addObserver(
+            forName: .reloadMainViewSection,
+            object: dataSource,
+            queue: .main)
+        { noti in
+            if let indexPath = noti.getIndexPath() {
                 self.mainCollectionView.reloadSections(IndexSet(arrayLiteral: indexPath.section))
             }
         }
@@ -108,5 +112,11 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         
         let height: CGFloat = dataSource.isFooterHidden(section) ? 0 : 50
         return CGSize(width: collectionView.frame.width, height: height)
+    }
+}
+
+private extension Notification {
+    func getIndexPath() -> IndexPath? {
+        self.userInfo?["IndexPath"] as? IndexPath
     }
 }
