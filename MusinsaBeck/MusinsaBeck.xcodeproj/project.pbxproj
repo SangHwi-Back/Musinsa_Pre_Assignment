@@ -27,7 +27,7 @@
 		1B2D6AF8287E9C620061A9FF /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AF7287E9C620061A9FF /* ResponseData.swift */; };
 		1B2D6AFB287EAF1A0061A9FF /* UseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */; };
 		1B2D6AFE287EAFBD0061A9FF /* UseCaseResponsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */; };
-		1B6097982882483B00281CF5 /* MainViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6097972882483B00281CF5 /* MainViewDelegate.swift */; };
+		1B6097982882483B00281CF5 /* MainViewReusableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6097972882483B00281CF5 /* MainViewReusableViewDelegate.swift */; };
 		1B60979C2882F6CA00281CF5 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60979B2882F6CA00281CF5 /* Notification+Name.swift */; };
 		1B60979E2882FB5100281CF5 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */; };
 		1B6097A02882FD6200281CF5 /* mainConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B60979F2882FD6200281CF5 /* mainConfig.xcconfig */; };
@@ -84,7 +84,7 @@
 		1B2D6AF7287E9C620061A9FF /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseContainer.swift; sourceTree = "<group>"; };
 		1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseResponsible.swift; sourceTree = "<group>"; };
-		1B6097972882483B00281CF5 /* MainViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDelegate.swift; sourceTree = "<group>"; };
+		1B6097972882483B00281CF5 /* MainViewReusableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewReusableViewDelegate.swift; sourceTree = "<group>"; };
 		1B60979B2882F6CA00281CF5 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		1B60979F2882FD6200281CF5 /* mainConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = mainConfig.xcconfig; path = MusinsaBeck/Resources/mainConfig.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -189,7 +189,7 @@
 			children = (
 				1B2D6AC7287E571A0061A9FF /* MainViewController.swift */,
 				1BE8B9A1287FD32600C3DDE8 /* MainCollectionViewDataSource.swift */,
-				1B6097972882483B00281CF5 /* MainViewDelegate.swift */,
+				1B6097972882483B00281CF5 /* MainViewReusableViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -392,7 +392,7 @@
 				1B2D6AE4287E90A10061A9FF /* CommonPageableScrollView.swift in Sources */,
 				1B2D6AF8287E9C620061A9FF /* ResponseData.swift in Sources */,
 				1B60979E2882FB5100281CF5 /* UICollectionReusableView+Extension.swift in Sources */,
-				1B6097982882483B00281CF5 /* MainViewDelegate.swift in Sources */,
+				1B6097982882483B00281CF5 /* MainViewReusableViewDelegate.swift in Sources */,
 				1B2D6AC6287E571A0061A9FF /* SceneDelegate.swift in Sources */,
 				1B2D6AE0287E7CF70061A9FF /* ContentsCollectionView.swift in Sources */,
 				1BE8B9A0287FD1B900C3DDE8 /* FooterCollectionReusableView.swift in Sources */,

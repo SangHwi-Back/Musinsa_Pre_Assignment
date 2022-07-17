@@ -19,7 +19,7 @@ class FooterCollectionReusableView: UICollectionReusableView {
     
     private(set) var type: MainFooterType = .showMore
     
-    var delegate: MainViewDelegate?
+    var delegate: MainViewReusableViewDelegate?
     var section: Int?
     
     func setFooterData(_ footer: Footer?) {

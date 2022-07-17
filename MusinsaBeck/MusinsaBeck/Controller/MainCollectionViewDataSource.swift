@@ -120,7 +120,7 @@ extension MainCollectionViewDataSource {
     }
 }
 
-extension MainCollectionViewDataSource: MainViewDelegate {
+extension MainCollectionViewDataSource: MainViewReusableViewDelegate {
     func didSelectReusableView(_ section: Int, reusableView: UICollectionReusableView) {
         if reusableView is FooterCollectionReusableView, let type = listModel?.cellType(section) {
             
