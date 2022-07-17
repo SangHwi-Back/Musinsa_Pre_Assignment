@@ -5,8 +5,8 @@
 //  Created by 백상휘 on 2022/07/16.
 //
 
-import Foundation
+import UIKit
 
 protocol MainViewDelegate {
-    func didSelectReusableView(_ section: Int)
+    func didSelectReusableView(_ section: Int, reusableView: UICollectionReusableView)
 }

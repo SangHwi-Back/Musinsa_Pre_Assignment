@@ -55,7 +55,7 @@ class FooterCollectionReusableView: UICollectionReusableView {
     
     @objc func showMoreButtonTouchUpInside() {
         if let section = section {
-            delegate?.didSelectReusableView(section)
+            delegate?.didSelectReusableView(section, reusableView: self)
         }
     }
 }

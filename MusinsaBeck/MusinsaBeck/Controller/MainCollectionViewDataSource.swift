@@ -25,35 +25,32 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        guard let cellType = getCellType(section) else {
-            return 0
-        }
-        
+        guard let cellType = getCellType(section) else { return 0 }
         return listModel?.currentListCount.getCount(type: cellType) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let model = listModel?.contents(indexPath.section), let cellType = indexPath.cellType() else {
+        guard let cellType = indexPath.cellType() else {
             os_log("MainCollectionView reuse cell Failed.")
             return UICollectionViewCell()
         }
         
         var cell: MainCollectionViewCell?
+        let model = listModel?.contents(indexPath.section)
         
         switch cellType {
         case .grid:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridItemCollectionViewCell.reuseIdentifier, for: indexPath) as? GridItemCollectionViewCell
-            cell?.data = model.goods?[indexPath.item]
+            cell?.data = model?.goods?[indexPath.item]
         case .banner:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCollectionViewCell.reuseIdentifier, for: indexPath) as? BannerCollectionViewCell
-            cell?.data = model.banners
+            cell?.data = model?.banners
         case .scroll:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScrollCollectionViewCell.reuseIdentifier, for: indexPath) as? ScrollCollectionViewCell
-            cell?.data = model.goods
+            cell?.data = model?.goods
         case .style:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: StyleGridItemCollectionViewCell.reuseIdentifier, for: indexPath) as? StyleGridItemCollectionViewCell
-            cell?.data = model.styles?[indexPath.item]
+            cell?.data = model?.styles?[indexPath.item]
         }
         
         cell?.setData(cellType)
@@ -80,8 +77,11 @@ class MainCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             footer.section = indexPath.section
             
             return footer
+            
         default:
+            
             os_log("MainCollectionView 'viewForSupplementaryElementOfKind' isn't contained in UICollectionView.elementKindSectionHeader or UICollectionView.elementKindSectionFooter")
+            
             return UICollectionReusableView()
         }
     }
@@ -121,23 +121,29 @@ extension MainCollectionViewDataSource {
 }
 
 extension MainCollectionViewDataSource: MainViewDelegate {
-    func didSelectReusableView(_ section: Int) {
-        if let type = listModel?.cellType(section) {
+    func didSelectReusableView(_ section: Int, reusableView: UICollectionReusableView) {
+        if reusableView is FooterCollectionReusableView, let type = listModel?.cellType(section) {
+            
+            var shouldNotify = false
             
             switch listModel?.footerType(section) {
             case .refresh:
-                listModel?.reloadSectionCount(section: section)
+                listModel?.reloadSection(section: section)
+                shouldNotify = true
             case .showMore:
+                shouldNotify = listModel?.currentListCount.getCount(type: type) != listModel?.listCount.getCount(type: type)
                 listModel?.showMoreButtonTouchUpInside(type)
             default:
                 return
             }
             
-            NotificationCenter.default.post(
-                name: NSNotification.Name.reloadMainViewSection,
-                object: self,
-                userInfo: ["IndexPath": IndexPath(item: 0, section: section)]
-            )
+            if shouldNotify {
+                NotificationCenter.default.post(
+                    name: NSNotification.Name.reloadMainViewSection,
+                    object: self,
+                    userInfo: ["IndexPath": IndexPath(item: 0, section: section)]
+                )
+            }
         }
     }
 }

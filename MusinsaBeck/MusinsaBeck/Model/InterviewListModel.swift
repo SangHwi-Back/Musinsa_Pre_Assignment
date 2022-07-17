@@ -11,7 +11,7 @@ class InterviewListModel {
     private(set) var data: Data
     private(set) var list: InterviewList
     
-    private var listCount = MainCellListCount()
+    private(set) var listCount = MainCellListCount()
     private(set) var currentListCount = MainCellListCount()
     
     var entities: [ResponseData] {
@@ -49,6 +49,7 @@ class InterviewListModel {
         contents(section)?.type.cellType()
     }
     
+    // MARK: - reload all.
     func reloadSectionsCount() {
         listCount.grid = 0
         listCount.style = 0
@@ -68,7 +69,8 @@ class InterviewListModel {
         showMoreButtonTouchUpInside(.style)
     }
     
-    func reloadSectionCount(section index: Int) {
+    // MARK: - showMore, reload contents.
+    func reloadSection(section index: Int) {
         guard check(index), let cellType = cellType(index) else {
             return
         }
