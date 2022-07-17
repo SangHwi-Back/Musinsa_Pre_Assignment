@@ -134,7 +134,7 @@ extension MainCollectionViewDataSource: MainViewDelegate {
             }
             
             NotificationCenter.default.post(
-                name: NSNotification.Name(rawValue: ""),
+                name: NSNotification.Name.reloadMainViewSection,
                 object: self,
                 userInfo: ["IndexPath": IndexPath(item: 0, section: section)]
             )

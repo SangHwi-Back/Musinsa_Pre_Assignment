@@ -28,7 +28,6 @@
 		1B2D6AFB287EAF1A0061A9FF /* UseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */; };
 		1B2D6AFE287EAFBD0061A9FF /* UseCaseResponsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */; };
 		1B6097982882483B00281CF5 /* MainViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6097972882483B00281CF5 /* MainViewDelegate.swift */; };
-		1B60979A2882801F00281CF5 /* GridLayoutListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6097992882801F00281CF5 /* GridLayoutListModel.swift */; };
 		1B60979C2882F6CA00281CF5 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60979B2882F6CA00281CF5 /* Notification+Name.swift */; };
 		1B60979E2882FB5100281CF5 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */; };
 		1B6097A02882FD6200281CF5 /* mainConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B60979F2882FD6200281CF5 /* mainConfig.xcconfig */; };
@@ -86,7 +85,6 @@
 		1B2D6AFA287EAF1A0061A9FF /* UseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseContainer.swift; sourceTree = "<group>"; };
 		1B2D6AFD287EAFBD0061A9FF /* UseCaseResponsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseResponsible.swift; sourceTree = "<group>"; };
 		1B6097972882483B00281CF5 /* MainViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDelegate.swift; sourceTree = "<group>"; };
-		1B6097992882801F00281CF5 /* GridLayoutListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutListModel.swift; sourceTree = "<group>"; };
 		1B60979B2882F6CA00281CF5 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		1B60979F2882FD6200281CF5 /* mainConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = mainConfig.xcconfig; path = MusinsaBeck/Resources/mainConfig.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -249,7 +247,6 @@
 				1BE8B98A287ED8D100C3DDE8 /* RequestURLModel.swift */,
 				1BE8B98D287EDAED00C3DDE8 /* ResponseDecodeModel.swift */,
 				1BE8B993287FAD3A00C3DDE8 /* InterviewListModel.swift */,
-				1B6097992882801F00281CF5 /* GridLayoutListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,7 +392,6 @@
 				1B2D6AE4287E90A10061A9FF /* CommonPageableScrollView.swift in Sources */,
 				1B2D6AF8287E9C620061A9FF /* ResponseData.swift in Sources */,
 				1B60979E2882FB5100281CF5 /* UICollectionReusableView+Extension.swift in Sources */,
-				1B60979A2882801F00281CF5 /* GridLayoutListModel.swift in Sources */,
 				1B6097982882483B00281CF5 /* MainViewDelegate.swift in Sources */,
 				1B2D6AC6287E571A0061A9FF /* SceneDelegate.swift in Sources */,
 				1B2D6AE0287E7CF70061A9FF /* ContentsCollectionView.swift in Sources */,
