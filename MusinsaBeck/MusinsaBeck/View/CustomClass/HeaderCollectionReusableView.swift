@@ -11,27 +11,19 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     func setHeaderData(_ header: Header?) {
         
-        headerImageView.isHidden = (header?.iconURL == nil)
         headerTitleLabel.text = header?.title
         
-        if let urlString = header?.linkURL {
-            openURL = URL(string: urlString)
-        }
+        let urlString = header?.linkURL
+        linkedButton.setTitle(urlString == nil ? "" : "전체", for: .normal)
+        openURL = (urlString == nil ? nil : URL(string: urlString!))
+        linkedButton.isUserInteractionEnabled = (openURL != nil)
         
-        if let urlString = header?.iconURL {
-            iconURL = URL(string: urlString)
-            headerImageView.isHidden = false
-        } else {
-            headerImageView.isHidden = true
-        }
+        headerImageView.setImage(from: header?.iconURL)
+        headerImageView.isHidden = header?.iconURL == nil
     }
     
-    var openURL: URL?
-    var iconURL: URL? {
-        didSet {
-            self.setHeaderImage()
-        }
-    }
+    private var openURL: URL?
+    private var iconURL: URL?
     
     @IBOutlet weak var headerStackView: UIStackView!
     @IBOutlet weak var headerImageView: UIImageView!
