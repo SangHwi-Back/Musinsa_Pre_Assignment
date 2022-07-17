@@ -17,7 +17,6 @@
 		1B2D6ADE287E76C00061A9FF /* ContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D6ADC287E76C00061A9FF /* ContentsCollectionViewCell.xib */; };
 		1B2D6AE0287E7CF70061A9FF /* ContentsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6ADF287E7CF70061A9FF /* ContentsCollectionView.swift */; };
 		1B2D6AE2287E8C4A0061A9FF /* CommonRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AE1287E8C4A0061A9FF /* CommonRoundedButton.swift */; };
-		1B2D6AE4287E90A10061A9FF /* CommonPageableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AE3287E90A10061A9FF /* CommonPageableScrollView.swift */; };
 		1B2D6AEC287E9BE20061A9FF /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AEB287E9BE20061A9FF /* Contents.swift */; };
 		1B2D6AEE287E9BE80061A9FF /* Banners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AED287E9BE80061A9FF /* Banners.swift */; };
 		1B2D6AF0287E9BF60061A9FF /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D6AEF287E9BF60061A9FF /* Header.swift */; };
@@ -74,7 +73,6 @@
 		1B2D6ADC287E76C00061A9FF /* ContentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		1B2D6ADF287E7CF70061A9FF /* ContentsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionView.swift; sourceTree = "<group>"; };
 		1B2D6AE1287E8C4A0061A9FF /* CommonRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRoundedButton.swift; sourceTree = "<group>"; };
-		1B2D6AE3287E90A10061A9FF /* CommonPageableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPageableScrollView.swift; sourceTree = "<group>"; };
 		1B2D6AEB287E9BE20061A9FF /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 		1B2D6AED287E9BE80061A9FF /* Banners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banners.swift; sourceTree = "<group>"; };
 		1B2D6AEF287E9BF60061A9FF /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 			children = (
 				1B0B3CEA28837DEB003CA14F /* UIImageView+Extension.swift */,
 				1B60979D2882FB5100281CF5 /* UICollectionReusableView+Extension.swift */,
-				1B2D6AE3287E90A10061A9FF /* CommonPageableScrollView.swift */,
 				1B2D6AE1287E8C4A0061A9FF /* CommonRoundedButton.swift */,
 				1B2D6ADF287E7CF70061A9FF /* ContentsCollectionView.swift */,
 				1BE8B9A72881572100C3DDE8 /* StyleCollectionView.swift */,
@@ -389,7 +386,6 @@
 				1B2D6AEE287E9BE80061A9FF /* Banners.swift in Sources */,
 				1B2D6AC8287E571A0061A9FF /* MainViewController.swift in Sources */,
 				1B2D6AC4287E571A0061A9FF /* AppDelegate.swift in Sources */,
-				1B2D6AE4287E90A10061A9FF /* CommonPageableScrollView.swift in Sources */,
 				1B2D6AF8287E9C620061A9FF /* ResponseData.swift in Sources */,
 				1B60979E2882FB5100281CF5 /* UICollectionReusableView+Extension.swift in Sources */,
 				1B6097982882483B00281CF5 /* MainViewReusableViewDelegate.swift in Sources */,
